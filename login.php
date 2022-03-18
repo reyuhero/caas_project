@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+
   <title>Login</title>
 </head>
 
@@ -15,23 +17,29 @@
     <div class="ps-3">CAAS</div>
   </nav>
   <main class="d-flex justify-content-center mx-auto position-relative">
-    <?php include "./square.svg" ?>
+    <?php include __DIR__ . "/square.svg" ?>
     <form class="col-11 shadow-md bg-white p-4 p-md-5 text-center border border-white rounded-5 z-2" style="--bs-bg-opacity: 0.3">
       <h2 class="mb-5 fw-bold">Welcome back to CAAS</h2>
       <div class="border border-gray form-group ryo-rounded-top text-start" style="--r: .8rem;">
-        <label for="email" class="badge fw-light p-1 px-3 text-dark">Email</label>
+        <label for="email" class="badge fw-light p-1 px-3 text-dark opacity-75">Email</label>
         <input type="email" id="email" class="border-0 border-1 border-bottom border-dark form-control mt-2 py-2 px-3 rounded-0 shadow-0" />
       </div>
-      <div class="d-grid gap-2">
-        <button class="btn  text-white text-uppercase  mt-5 mb-4" type="submit">Login</button>
+      <div class="d-grid">
+        <button class="btn btn-warning rounded-pill fw-bold mt-5 mb-43 py-2" type="submit">Log in</button>
       </div>
-      <div class="divider d-flex align-items-center my-4">
-        <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+      <div class="d-flex align-items-center my-2 position-relative justify-content-center">
+        <hr class="w-100 position-absolute z-1" />
+        <p class="text-center mx-3 mb-0 text-muted fw-normal badge bg-white z-2">OR</p>
       </div>
 
-      <a class="btn btn-primary btn-lg btn-block text-black goole-btn" href="#" role="button">
-        <i class="fab fa-google-f me-2"></i>Continue with Google
-      </a>
+      <div class="d-flex flex-column gap-2">
+        <a class="btn btn-light rounded-pill px-4 py-2" href="#" role="button">
+          <i class="fab fa-google me-2"></i><span class="fs-6 fw-bold">Log in with Google</span>
+        </a>
+        <a class="btn btn-light rounded-pill px-4 py-2" href="#" role="button">
+          <i class="fab fa-tiktok me-2"></i><span class="fs-6 fw-bold">Log in with TikTok</span>
+        </a>
+      </div>
 
       <div class="row align-items-start mt-5">
         <div class="col-sm-8">
@@ -44,9 +52,7 @@
           <a href="#" class="btn btn-block text-white p-2">Sign up</a>
         </div>
       </div>
-      <div class="col-sm-12">
-        <a href="#" class="f-pass">Forgot Password</a>
-      </div>
+      
 
     </form>
   </main>
