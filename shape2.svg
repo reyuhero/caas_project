@@ -1,0 +1,7 @@
+<svg viewBox="-2 49 104 52" style="width: 10rem; top: -50px;" class="end-0 top-50 position-absolute blur z-1" opacity="1">
+  <linearGradient id="react-aria1013596315-2">
+    <stop offset="0%" stop-color="rgba(19, 19, 19, 0)"></stop>
+    <stop offset="100%" stop-color="rgba(242, 162, 138, .8)"></stop>
+  </linearGradient>
+  <path d="M0,50 a1,1 0 0,0 100,0" fill="url(#react-aria1013596315-2)" stroke="none"></path>
+</svg>

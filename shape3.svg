@@ -1,0 +1,8 @@
+<svg style="width: 10rem; top: -50px" class="bottom-0 start-0 position-absolute blur z-1" opacity="1">
+  <linearGradient id="react-aria1013596315-3">
+    <stop offset="10%" stop-color="rgba(19, 19, 19, 0)"></stop>
+    <stop offset="80%" stop-color="rgb(210, 217, 67)"></stop>
+  </linearGradient>
+  <rect fill="none" stroke="url(#react-aria1013596315-3)" stroke-width="4"
+    class="Rect__StyledSvgRect-sc-1vf9vjs-0 inTDGY"></rect>
+</svg>

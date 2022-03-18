@@ -16,8 +16,10 @@
   <nav class="z-3 bg-white relative text-center fs-2 p-3 W-100 mb-5 fw-bold d-flex justify-content-start shadow-md" style="font-family: serif !important;">
     <div class="ps-3">CAAS</div>
   </nav>
-  <main class="d-flex flex-column justify-content-center position-relative m-3">
+  <main class="d-flex flex-column justify-content-center position-relative m-3 p-md-5">
     <?php include __DIR__ . "/square.svg" ?>
+    <?php include __DIR__ . "/shape2.svg" ?>
+    <?php include __DIR__ . "/shape3.svg" ?>
     <form class="col mx-1 shadow-md bg-white p-4 p-md-5 text-center border border-white rounded-5 z-2" style="--bs-bg-opacity: 0.3">
       <h2 class="mb-5 fw-bold">Welcome back to CAAS</h2>
       <div class="border border-gray form-group ryo-rounded-top text-start" style="--r: .8rem;">
@@ -27,31 +29,15 @@
       <div class="d-grid">
         <button class="btn btn-warning rounded-pill fw-bold mt-5 py-2" type="submit">Log in</button>
       </div>
-      <div class="d-flex align-items-center my-2 position-relative justify-content-center">
-        <hr class="w-100 position-absolute z-1" />
-        <p class="text-center mx-3 mb-0 text-muted fw-normal badge bg-white z-2">OR</p>
-      </div>
 
-      <div class="d-flex flex-column gap-3">
-        <a class="btn btn-light rounded-pill px-4 py-2" href="#" role="button">
-          <i class="fab fa-google me-2"></i><span class="fs-7 fw-bold">Log in with Google</span>
-        </a>
-        <a class="btn btn-light rounded-pill px-4 py-2" href="#" role="button">
-          <i class="fab fa-tiktok me-2"></i><span class="fs-7 fw-bold">Log in with TikTok</span>
-        </a>
-      </div>
-
-      
-      
     </form>
-    <div class="row justify-content-center mt-5">
-      <div class="col-sm-8">
+    <div class="d-flex flex-column justify-content-center mt-5 col-8 mx-auto">
+      <div class="col-12 col-md-9">
         <p class="text">
           <b>New To Contra?</b> Contra is a new professional network for flexible work. Build your career around the life you want
         </p>
-
       </div>
-      <a href="#" class="btn btn-dark p-2 rounded-pill w-auto px-3 fw-bold">Sign up</a>
+      <a href="#" class="btn btn-dark p-2 rounded-pill w-auto px-3 fw-bold mx-auto">Sign up</a>
     </div>
   </main>
 
