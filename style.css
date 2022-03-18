@@ -1,0 +1,37 @@
+.shadow-md {
+  box-shadow: 0 0 10px 10px #00000011;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.rounded-5 {
+  border-radius: 20px;
+}
+nav {
+  z-index: 9999;
+}
+.blur {
+  filter: blur(8px);
+}
+
+.z-1 {
+  z-index: 1;
+}
+.z-2 {
+  z-index: 2;
+}
+.z-3 {
+  z-index: 3;
+}
+.shadow-0 {
+  box-shadow: none !important;
+}
+.shadow-0:focus {
+  box-shadow: none !important;
+}
+.shadow-0:hover {
+  box-shadow: none !important;
+}
