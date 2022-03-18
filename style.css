@@ -35,3 +35,7 @@ nav {
 .shadow-0:hover {
   box-shadow: none !important;
 }
+.ryo-rounded-top {
+  border-top-left-radius: var(--r, 0.25rem) !important;
+  border-top-right-radius: var(--r, 0.25rem) !important;
+}

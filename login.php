@@ -18,9 +18,9 @@
     <?php include "./square.svg" ?>
     <form class="col-11 shadow-md bg-white p-4 p-md-5 text-center border border-white rounded-5 z-2" style="--bs-bg-opacity: 0.3">
       <h2 class="mb-5 fw-bold">Welcome back to CAAS</h2>
-      <div class="form-group border border-gray rounded-3">
-        <label for="email">Email</label>
-        <input type="email" id="email" class="form-control shadow-0 mb-4 p-0 border-0" placeholder="Enter your email address" on-focus="this.placeholder = ''" on-blur="this.placeholder='Enter your email address'" />
+      <div class="border border-gray form-group ryo-rounded-top text-start" style="--r: .8rem;">
+        <label for="email" class="badge fw-light p-1 px-3 text-dark">Email</label>
+        <input type="email" id="email" class="border-0 border-1 border-bottom border-dark form-control mt-2 py-2 px-3 rounded-0 shadow-0" />
       </div>
       <div class="d-grid gap-2">
         <button class="btn  text-white text-uppercase  mt-5 mb-4" type="submit">Login</button>
