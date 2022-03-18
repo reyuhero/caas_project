@@ -39,3 +39,6 @@ nav {
   border-top-left-radius: var(--r, 0.25rem) !important;
   border-top-right-radius: var(--r, 0.25rem) !important;
 }
+.fs-7 {
+  font-size: 0.9rem !important;
+}
