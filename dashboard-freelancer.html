@@ -15,27 +15,34 @@
 <body class="d-flex flex-column bg-light">
 
   <nav class="z-3 px-4 bg-white align-items-center position-relative text-center p-2 W-100 mb-2 d-flex justify-content-between shadow-md" style="font-family: serif !important;">
-    <div class="px-2 fw-bold fs-2">
-      <div>CAAS</div>
-    </div>
-    <grid class="grid cols-1 flow-column gap-2">
+    <flex class="align-items-center ">
+      <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
+      <grid class="cols-3 flow-column gap-2">
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0"><i class="fas fa-file-invoice"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0"><i class="fas fa-briefcase"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0"><i class="fas fa-comment-dots"></i></button>
+      </grid>
+    </flex>
+    <flex class="gap-2">
       <button class="btn btn-outline-gray rounded-pill px-3">
         <i class="fas fa-wallet pe-2"></i>
         $0.00
       </button>
       <button class="btn btn-circle btn-outline-gray rounded-pill border-0 cubic-bezier">
-        <i class="fas fa-bell"></i>
+        <i class="fas fa-bell"></i> 
       </button>
-      <div class="dropdown">
-        <button type="button" id="profile-dropdown" class="btn rounded-pill overflow-hidden p-0 dropdown-toggle no-content" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="/public/images/img.jpg" class="rounded-pill" style="width: 40px;"/>
-          <i class="fas fa-angle-down"></i>
+      <div class="dropdown" style="margin-top: 5px;">
+        <button class="btn btn-outline-gray p-0 rounded-pill border-0" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/public/images/img.jpg" class=" rounded-pill dropdown-toggle no-content" style="width: 35px;" />
         </button>
+        <div id="profile-dropdown" class="btn rounded-pill  overflow-hidden p-0 dropdown-toggle no-content" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-angle-down text-black-50"></i>
+        </div>
         <ul class="dropdown-menu" aria-labelledby="profile-dropdown">
           <li><a href="#" class="dropdown-item">action</a></li>
         </ul>
       </div>
-    </grid>
+    </flex>
   </nav>
 
   <main class="d-flex flex-column justify-content-center position-relative mx-3 p-md-5  ">

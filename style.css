@@ -26,6 +26,16 @@ grid {
   display: grid;
   grid-template-columns: repeat(var(--columns, 12), 1fr);
 }
+flex {
+  display: flex !important;
+}
+.btn-circle {
+  width: 35px !important;
+  height: 35px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
 footer {
   position: sticky;
   bottom: 0;
@@ -52,11 +62,17 @@ footer {
   --columns: 2;
 }
 .cols-1 {
-  --columns: 1;
+  --columns: 2;
+}
+.cols-4 {
+  --columns: 4;
+}
+.cols-3 {
+  --columns: 3;
 }
 
-span {
-  grid-column: span 2;
+.span {
+  grid-column: span var(--span, 1);
 }
 .rounded-5 {
   border-radius: 20px;
