@@ -18,9 +18,13 @@
     <flex class="align-items-center ">
       <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
       <grid class="cols-3 flow-column gap-2">
-        <button class="btn btn-circle btn-outline-gray rounded-pill border-0"><i class="fas fa-file-invoice"></i></button>
-        <button class="btn btn-circle btn-outline-gray rounded-pill border-0"><i class="fas fa-briefcase"></i></button>
-        <button class="btn btn-circle btn-outline-gray rounded-pill border-0"><i class="fas fa-comment-dots"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reports"><i class="fas fa-scroll"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0 fs-7 fw-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="KDS">KDS</button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Opportunities"><i class="fas fa-briefcase"></i></button>
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messages"><i class="fas fa-comment-dots"></i></button>
       </grid>
     </flex>
     <flex class="gap-2">
@@ -28,28 +32,63 @@
         <i class="fas fa-wallet pe-2"></i>
         $0.00
       </button>
-      <button class="btn btn-circle btn-outline-gray rounded-pill border-0 cubic-bezier">
-        <i class="fas fa-bell"></i> 
+      <button class="btn btn-outline-gray btn-circle">
+        <i class="fas fa-bookmark"></i>
       </button>
-      <div class="dropdown" style="margin-top: 5px;">
-        <button class="btn btn-outline-gray p-0 rounded-pill border-0" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="dropdown">
+        <button class="btn btn-circle btn-outline-gray rounded-pill border-0 cubic-bezier dropdown-toggle no-content" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-bell"></i>
+        </button>
+        <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+          <li class="fs-8 px-3 py-3">
+            <div class="fw-bold">Mohammad Reza Yousofi</div>
+            <div class="text-black-50">yousofimreza@gmail.com</div>
+          </li>
+          <li class="border"><a href="#" class="dropdown-item py-2"><i class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch to Hiring</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown " >
+        <button class="btn btn-outline-gray p-0 rounded-pill border-0" >
           <img src="/public/images/img.jpg" class=" rounded-pill dropdown-toggle no-content" style="width: 35px;" />
         </button>
         <div id="profile-dropdown" class="btn rounded-pill  overflow-hidden p-0 dropdown-toggle no-content" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-angle-down text-black-50"></i>
         </div>
-        <ul class="dropdown-menu" aria-labelledby="profile-dropdown">
-          <li><a href="#" class="dropdown-item">action</a></li>
+        <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+          <li class="fs-8 px-3 py-3">
+            <div class="fw-bold">Mohammad Reza Yousofi</div>
+            <div class="text-black-50">yousofimreza@gmail.com</div>
+          </li>
+          <li class="border"><a href="#" class="dropdown-item py-2"><i class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch to Hiring</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+          <li><a href="#" class="dropdown-item py-2"><i class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
         </ul>
       </div>
     </flex>
   </nav>
 
-  <main class="d-flex flex-column justify-content-center position-relative mx-3 p-md-5  ">
+  <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
     
     <!-- container -->
-    <container class="z-3 mx-auto col col-md-8">
-      
+    <container class="z-3">
+      <grid class="flow-column gap-4">
+        <div class="span d-flex flex-column align-items-center bg-white-o rounded-5 vh-100 border-white shadow-sm" style="--span: 4;">
+          <div  id="profile" class="rounded-pill mt-5 btn btn-outline-warning p-1 border-0 position-relative fas overflow-hidden">
+            <img src="/public/images/img.jpg" style="width: 150px; height: 150px;" class="rounded-pill" alt="">
+          </div>
+          <div>name</div>
+          <div>work with me</div>
+          <i class="fas fa-image-polaroid-user"></i>
+        </div>
+        <div class="span" style="--span: 8;">content</div>
+      </grid>
     </container>
   </main>
 
@@ -57,6 +96,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var profile = document.getElementById("profile");
+      profile.onmouseover = function() {
+        profile.classList.add("profile");
+      }
+      profile.onmouseleave = function() {
+        profile.classList.remove("profile");
+      }
+    </script>
   </footer>
 </body>
 
