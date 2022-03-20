@@ -15,9 +15,9 @@
 <body class="d-flex flex-column bg-light">
 
   <nav class="z-3 sticky-top px-4 bg-white align-items-center position-relative text-center p-2 W-100 mb-2 d-flex justify-content-between shadow-md" style="font-family: serif !important;">
-    <flex class="align-items-center ">
+    <article class="align-items-center ">
       <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
-      <grid class="cols-3 flow-column gap-2">
+      <section class="cols-3 flow-column gap-2">
         <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></button>
         <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></button>
         <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></button>
@@ -25,9 +25,9 @@
         <button class="btn btn-circle btn-outline-gray rounded-pill border-0 fs-7 fw-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="KDS">KDS</button>
         <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Opportunities"><i class="fas fa-briefcase"></i></button>
         <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messages"><i class="fas fa-comment-dots"></i></button>
-      </grid>
-    </flex>
-    <flex class="gap-2">
+      </section>
+    </article>
+    <article class="gap-2">
       <button class="btn btn-outline-gray rounded-pill px-3">
         <i class="fas fa-wallet pe-2"></i>
         $0.00
@@ -72,14 +72,14 @@
         </ul>
       </div>
       
-    </flex>
+    </article>
   </nav>
 
   <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
     
     <!-- container -->
-    <container class="z-3">
-      <grid class="flow-column gap-4">
+    <div class="z-3">
+      <section class="flow-column gap-4">
         <div class="span d-flex flex-column align-items-center bg-white-o rounded-5 vh-100 border-white shadow-sm" style="--span: 4;">
           <div  id="profile" class="rounded-pill mt-5 btn btn-outline-warning p-1 border-0 position-relative fas overflow-hidden">
             <img src="/public/images/img.jpg" style="width: 150px; height: 150px;" class="rounded-pill" alt="">
@@ -97,22 +97,79 @@
           <i class="fas fa-image-polaroid-user"></i>
         </div>
         <div class="span" style="--span: 8;">
-          <div class="mt-5 px-3">
+          <div class="mt-5 px-3 mb-4">
             <div class="h1 fw-bold">Full stack Developer</div>
           </div>
-          <flex class="fs-5 text-black-50 fw-bold w-100 border-bottom border-white border-3 gap-3">
-            <div class="text-dark border-bottom border-3 border-dark pb-3">Opportunities</div>
+          <article class="fs-5 text-black-50 fw-bold border-bottom border-white border-3 gap-3 col-10">
+            <div class="sh-bottom text-dark pb-3">Opportunities</div>
             <div>Work</div>
             <div>Service</div>
-          </flex>
-          <flex class="mt-5">
-            <div class="bg-white rounded-5 p-4 shadow">
-              post an Opportunity
-            </div>
-          </flex>
+          </article>
+          <article class="mt-5 col-10 flex-column gap-4">
+            <article class="bg-white rounded-5 p-4 shadow gap-3  align-items-center bg-white-o">
+              <div class="mx-3 border border-warning rounded-pill border-3 p-3">
+                <i class="fa fa-plus p-3 fs-5"></i>
+              </div>
+              <article class="flex-column ps-1">
+                <div class="fs-4 fw-bold">Post an Opportunity</div>
+                <div class="text-black-50"> Match with top Independents to collaborate on your next project <i class="fas fa-star text-warning"></i></div>
+                <br>
+                <div>
+                  Ready to start a project?
+                </div>
+                <div class="fw-bold">
+                  Manage existing opportunities
+                </div>
+              </article>
+            </article>
+            <article class="flex-column bg-white rounded-5 p-4 shadow gap-3 bg-white-o">
+              <article class="flex-row justify-content-between">
+                <article class="gap-3 align-items-center">
+                  <i class="fas fa-briefcase"></i>
+                  Your Job Posting
+                </article>
+                <div>
+                  <button class="btn btn-light rounded-pill">
+                    <i class="fas fa-eye-slash"></i>
+                    Declined
+                  </button>
+                  <button class="btn btn-circle btn-light">
+                    <i class="fas fa-ellipsis-h"></i>
+                  </button>
+                </div>
+              </article>
+              <article class="align-items-center">
+                <div class="mx-3 border border-warning rounded-pill border-3 p-3">
+                  <i class="fa fa-camera p-3 fs-5"></i>
+                </div>
+                <article class="flex-column ps-1">
+                  <div class="fs-6  text-black-50">Regrowup</div>
+                  <div class="fs-5 fw-bold">Engineering, Frontend Engineering + Full stack Engineering</div>
+                </article>
+              </article>
+              <section class="gap-1 border-bottom pb-2">
+                <div class="bg-light col rounded-pill px-1 py-2 fs-8 text-center span" style="--span:3">Frontend Engineering</div>
+                <div class="bg-light col rounded-pill px-1 py-2 fs-8 text-center span" style="--span:3">Full statck Engineering</div>
+                <article class="align-items-center fs-8 gap-1 span" style="--span: 5">
+                  <span><i class="fa fa-clock pe-1"></i>6-3 months</span>
+                  <span>&bull; 15 hrs/wk</span>
+                  <span class="bg-light p-1 rounded fs-8">$100/hr</span>
+                </article>
+              </section>
+              <article class=" justify-content-between">
+                <article class="align-items-center gap-2 fw-bold">
+                  <div class="bg-light rounded-pill p-1">
+                    <i class="fa fa-user p-2 text-black-50"></i>
+                  </div>
+                  Finding matches
+                </article>
+                <button class="btn btn-outline-warning rounded-pill text-dark fw-bold">Go to your listing</button>
+              </article>
+            </article>
+          </article>
         </div>
-      </grid>
-    </container>
+      </section>
+    </div>
   </main>
 
   <footer>
