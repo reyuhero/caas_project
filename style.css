@@ -27,10 +27,6 @@ grid {
   grid-template-columns: repeat(var(--columns, 12), 1fr);
 }
 
-.profile:hover {
-  border: 5px solid #000;
-}
-
 .profile::after {
   content: "\f030";
   display: flex;
@@ -46,7 +42,14 @@ grid {
   top: 0;
   right: 0;
 }
-
+.bg-light-h:hover {
+  background-color: rgba(0, 0, 0, 0.233) !important;
+}
+.g-primary {
+  background: radial-gradient(at 100% 100%, #00f48d 0%, transparent 70%),
+    radial-gradient(at 100% 0%, #00c2ff 0%, transparent 70%),
+    radial-gradient(at 0% 0%, #0012ff 0%, transparent 70%), #7700ff;
+}
 .btn-circle {
   width: 35px !important;
   height: 35px !important;
