@@ -2,21 +2,35 @@
   --brand: #ffc107;
   --brand-light-shadow: #ffc10771;
   --shadow: 0 0 5px var(--brand-light-shadow);
+  --cubic-bezier: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
-.shadow-md {
-  box-shadow: 0 0 10px 10px #00000011;
-}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+.shadow-md {
+  box-shadow: 0 0 10px 10px #00000011;
+}
+/* 
+section is grid
+article is flex
+*/
+
 .flow-column {
   grid-auto-flow: column;
 }
 .flow-row {
   grid-auto-flow: row;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 12), 1fr);
+}
+article{
+  display: flex;
 }
 grid {
   display: grid;
@@ -26,12 +40,45 @@ grid {
   display: grid;
   grid-template-columns: repeat(var(--columns, 12), 1fr);
 }
-input[type="text"]:focus {
-  border: none;
+input[type="text"]:focus,
+input[type="text"]:focus-visible {
   box-shadow: 0 0 5px #ccc;
+  border: 0 !important;
+  outline: none;
+  transition: var(--cubic-bezier);
+  -webkit-transition: var(--cubic-bezier);
+  -moz-transition: var(--cubic-bezier);
+  -ms-transition: var(--cubic-bezier);
+  -o-transition: var(--cubic-bezier);
 }
+input[type="text"] {
+  border: 0 !important;
+  outline: 0 !important;
+  background-color: #f3f3f3;
+  box-shadow: 0;
+  transition: var(--cubic-bezier);
+  -webkit-transition: var(--cubic-bezier);
+  -moz-transition: var(--cubic-bezier);
+  -ms-transition: var(--cubic-bezier);
+  -o-transition: var(--cubic-bezier);
+}
+.align-end {
+  text-align: end;
+}
+.sh-bottom {
+  box-shadow: 0 3px #000;
+}
+ 
 .bl-primary {
-  border-left: 20px solid var(--bs-primary) !important;
+  border-left: 10px solid var(--bs-primary) !important;
+}
+.btn-white {
+  background-color: white !important;
+  color: #4c4c4c !important;
+}
+.btn-gray {
+  background-color: #c2c2c2 !important;
+  color: gray !important;
 }
 .profile::after {
   content: "\f030";
@@ -120,6 +167,9 @@ nav {
 }
 .z-3 {
   z-index: 3;
+}
+.flex {
+  display: flex !important;
 }
 flex {
   display: flex !important;
