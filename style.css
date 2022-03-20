@@ -26,7 +26,13 @@ grid {
   display: grid;
   grid-template-columns: repeat(var(--columns, 12), 1fr);
 }
-
+input[type="text"]:focus {
+  border: none;
+  box-shadow: 0 0 5px #ccc;
+}
+.bl-primary {
+  border-left: 20px solid var(--bs-primary) !important;
+}
 .profile::after {
   content: "\f030";
   display: flex;
