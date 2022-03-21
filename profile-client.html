@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="public/library/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/public/fonts/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
   <title>Hire</title>
 </head>
 
 <body class="d-flex flex-column bg-light">
-
   <nav class="z-3 sticky-top px-4 bg-white align-items-center position-relative text-center p-2 W-100 mb-2 d-flex justify-content-between shadow-md" style="font-family: serif !important;">
-    <article class="align-items-center ">
+    <article class="align-items-center">
       <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
       <section class="cols-3 flow-column gap-2">
         <button class="btn btn-circle btn-outline-gray rounded-pill border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></button>
@@ -81,17 +81,8 @@
       <section class="flow-column gap-4">
         <!-- aside -->
         <aside class="span d-flex flex-column align-items-center bg-white-o rounded-5 h-100 border-white shadow-sm" style="--span: 4;">
-          <div id="profile" class="rounded-pill mt-5 btn btn-outline-warning p-0 border-0 position-relative " style="width: 150px; height: 150px;">
+          <div  id="profile" class="rounded-pill mt-5 btn btn-outline-warning p-1 border-0 position-relative fas overflow-hidden">
             <img src="/public/images/img.jpg" style="width: 150px; height: 150px;" class="rounded-pill" alt="">
-            <button class="grid opacity-0 btn border-0 position-absolute cubic-bezier start-0 top-0 position-relative btn-circle text-warning bg-dark w-100 h-100" style="--bs-bg-opacity: 0.5;">
-              <i class="fas fa-camera position-absolute fs-4"></i>
-              <i class="fas fa-plus position-absolute p-2" style="font-size: 10px; margin-top: 2px;"></i>
-            </button>
-            <div class="position-relative  z-3" style="bottom: 30px; left: 45px;">
-              <i class="fas fa-certificate text-info position-absolute z-1"></i>
-              <i class="fas fa-check text-light position-absolute z-2 p-1" style="font-size: 9px;" ></i>
-            </div>
-
           </div>
           <div class="bg-light bg-light-h m-2 rounded-3">
             <div class="fs-3 background-clip g-primary fw-bold mx-4 text-center lh-1 my-1 p-2">Mohammad Reza Yousofi</div>
@@ -103,17 +94,13 @@
           <article class="px-3 my-3 w-100">
             <button class="w-100 btn btn-gray rounded-pill">Work with me</button>
           </article>
-          <article class="px-3 my-3 w-100 gap-3 ">
-            <button class="w-100 btn btn-outline-warning rounded-pill fw-bold border-2">Invite me</button>
-            <button class="w-100 btn btn-outline-primary rounded-pill fw-bold border-2">Talk to me</button>
-          </article>
           <article class="justify-content-center align-items-center gap-2 mt-2">
             <button class="btn btn-light btn-circle shadow-sm"><i class="fas fa-plus"></i></button>
             <small class="text-black-50">add a bio to introduce yourself...</small>
           </article>
           <article class="justify-content-center align-items-center gap-2 mt-2">
-            <button class="btn btn-light btn-circle shadow-sm d-none"><i class="fas fa-plus"></i></button>
-            <small class="text-black-50">Industry & Skillsets</small>
+            <button class="btn btn-light btn-circle shadow-sm"><i class="fas fa-plus"></i></button>
+            <small class="text-black-50">add your pronouns</small>
           </article>
           <article class="justify-content-center align-items-center gap-2 mt-2">
              <i class="fas fa-map-marker-alt"></i>
@@ -131,10 +118,9 @@
             <div class="h1 fw-bold">Full stack Developer</div>
           </div>
           <article class="fs-5 text-black-50 fw-bold border-bottom border-white border-3 gap-3 col-10">
-            <div class="sh-bottom text-dark pb-3">About me</div>
-            <div>Team</div>
-            <div>Portfolio</div>
-            <div>Client Ratings</div>
+            <div class="sh-bottom text-dark pb-3">Opportunities</div>
+            <div>Work</div>
+            <div>Service</div>
           </article>
           <article class="mt-5 col-10 flex-column gap-4">
             <article class="bg-white rounded-5 p-4 shadow gap-3  align-items-center bg-white-o">
@@ -207,7 +193,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
-     
+    <script>
+      var profile = document.getElementById("profile");
+      profile.onmouseover = function() {
+        profile.classList.add("profile");
+      }
+      profile.onmouseleave = function() {
+        profile.classList.remove("profile");
+      }
+    </script>
   </footer>
 </body>
 

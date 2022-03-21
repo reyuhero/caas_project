@@ -32,6 +32,7 @@ section {
 article{
   display: flex;
 }
+
 grid {
   display: grid;
   grid-template-columns: repeat(var(--columns, 12), 1fr);
@@ -111,20 +112,9 @@ progress::-moz-progress-bar {
   background-color: #c2c2c2 !important;
   color: gray !important;
 }
-.profile::after {
-  content: "\f030";
-  display: flex;
-  color: var(--brand);
-  font-size: 24px;
-  justify-content: center;
-  align-items: center;
-  background-color: #00000085;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
+
+#profile:hover > button {
+  opacity: 1 !important;
 }
 .bg-light-h:hover {
   background-color: rgba(0, 0, 0, 0.233) !important;
