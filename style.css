@@ -1,6 +1,7 @@
 :root {
   --brand: #ffc107;
   --brand-light-shadow: #ffc10771;
+  --gray-light: #e0e0e0;
   --shadow: 0 0 5px var(--brand-light-shadow);
   --cubic-bezier: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
@@ -41,8 +42,21 @@ grid {
   display: grid;
   grid-template-columns: repeat(var(--columns, 12), 1fr);
 }
-input[type="text"]:focus,
-input[type="text"]:focus-visible {
+input:focus, input:focus-within, textarea:focus, textarea:focus-within {
+  outline: 0;
+}
+.rounded-4 {
+  border-radius: .7rem;
+  -webkit-border-radius: .7rem;
+  -moz-border-radius: .7rem;
+  -ms-border-radius: .7rem;
+  -o-border-radius: .7rem;
+}
+input::placeholder {
+  font-weight: 600;
+}
+input[type="text"]#search:focus,
+input[type="text"]#search:focus-visible {
   box-shadow: 0 0 5px #ccc;
   border: 0 !important;
   outline: none;
@@ -85,9 +99,7 @@ progress::-webkit-progress-value {
   -ms-border-radius: 55px;
   -o-border-radius: 55px;
 }
-progress::-moz-progress-bar {
-  /* style rules */
-}
+ 
 .align-end {
   text-align: end;
 }
@@ -103,6 +115,9 @@ progress::-moz-progress-bar {
 }
 .bl-warning {
   border-left: 5px solid var(--bs-warning) !important;
+}
+.bl-danger {
+  border-left: 5px solid var(--bs-danger) !important;
 }
 .btn-white {
   background-color: white !important;
@@ -125,8 +140,8 @@ progress::-moz-progress-bar {
     radial-gradient(at 0% 0%, #0012ff 0%, transparent 70%), #7700ff;
 }
 .btn-circle {
-  width: 35px !important;
-  height: 35px !important;
+  width: var(--size, 35px) !important;
+  height: var(--size, 35px) !important;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
@@ -145,6 +160,12 @@ footer {
 .background-clip {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.bg-gray-h:hover {
+  background: var(--gray-light);
+}
+.show:hover > a.btn {
+  opacity: 1 !important;
 }
 .btn-outline-gray {
   border: 1px solid var(--bs-gray-500) !important;
@@ -204,7 +225,7 @@ flex {
 .shadow-0 {
   box-shadow: none !important;
 }
-.shadow-0:focus {
+.btn .btn:focus + .shadow-0:focus, a.shadow-0:focus {
   box-shadow: none !important;
 }
 .shadow-0:hover {
@@ -229,6 +250,10 @@ flex {
 .fs-8 {
   font-size: 0.7rem;
 }
+.fs-9 {
+  font-size: 0.6rem;
+}
+
 h7 {
   font-size: 0.8rem;
 }
@@ -243,6 +268,7 @@ h7 {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 10%) !important;
 }
+
 .bg-white-o {
   background-color: #ffffff70;
 }
