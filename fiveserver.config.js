@@ -7,4 +7,5 @@ module.exports = {
   injectCss: false, // disable injecting css
   navigate: true, // enable auto-navigation
   debugVSCode: true,
+  browser: 'chrome',
 }

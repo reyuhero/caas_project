@@ -106,7 +106,7 @@ progress::-webkit-progress-value {
 .sh-bottom {
   box-shadow: 0 3px #000;
 }
- 
+
 .bl-primary {
   border-left: 5px solid rgba(var(--bs-primary-rgb),0.3) !important;
 }
