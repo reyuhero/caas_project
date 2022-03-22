@@ -108,17 +108,18 @@ progress::-webkit-progress-value {
 }
  
 .bl-primary {
-  border-left: 5px solid var(--bs-primary) !important;
+  border-left: 5px solid rgba(var(--bs-primary-rgb),0.3) !important;
 }
 .bl-success {
-  border-left: 5px solid var(--bs-success) !important;
+  border-left: 5px solid rgba(var(--bs-success-rgb),0.3) !important;
 }
 .bl-warning {
-  border-left: 5px solid var(--bs-warning) !important;
+  border-left: 5px solid rgba(var(--bs-warning-rgb),0.3) !important;
 }
 .bl-danger {
-  border-left: 5px solid var(--bs-danger) !important;
+  border-left: 5px solid rgba(var(--bs-danger-rgb),0.3) !important;
 }
+
 .btn-white {
   background-color: white !important;
   color: #4c4c4c !important;
