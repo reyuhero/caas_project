@@ -1,4 +1,4 @@
-@layer reset, default, pattern
+@layer reset, defaults, pattern, components, utilities;
 :root {
   --brand: #ffc107;
   --brand-light-shadow: #ffc10771;
@@ -6,13 +6,14 @@
   --shadow: 0 0 5px var(--brand-light-shadow);
   --cubic-bezier: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  text-transform: capitalize;
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    text-transform: capitalize;
+  }
 }
 .shadow-md {
   box-shadow: 0 0 10px 10px #00000011;
@@ -21,7 +22,10 @@
 section is grid
 article is flex
 */
-
+my-grid {
+  background-color: #4c4c4c;
+  padding: 10px;
+}
 .flow-column {
   grid-auto-flow: column;
 }
@@ -138,6 +142,9 @@ progress::-webkit-progress-value {
     radial-gradient(at 100% 0%, #00c2ff 0%, transparent 70%),
     radial-gradient(at 0% 0%, #0012ff 0%, transparent 70%), #7700ff;
 }
+.g-red {
+  background: linear-gradient(#8a0404, #040d6e) !important;
+}
 .btn-circle {
   width: var(--size, 35px) !important;
   height: var(--size, 35px) !important;
@@ -160,6 +167,7 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .bg-gray-h:hover {
   background: var(--gray-light);
 }
@@ -221,9 +229,19 @@ flex {
 .border-brand {
   border: 2px solid #ffffff80;
 }
+.bg-none {
+  background: none !important;
+}
 .shadow-0 {
   box-shadow: none !important;
 }
+.active-tab {
+  font-weight: bold;
+  color: #000!important;
+  box-shadow: var();
+  box-shadow: 0 3px #000;
+}
+
 .btn .btn:focus + .shadow-0:focus, a.shadow-0:focus {
   box-shadow: none !important;
 }
@@ -237,8 +255,18 @@ flex {
   border-top-left-radius: var(--r, 0.25rem) !important;
   border-top-right-radius: var(--r, 0.25rem) !important;
 }
+#profileTab .tab-item{
+  border: none !important;
+  background: none !important;
+  color: #00000080;
+}
+#profileTab > li > .active {
+  box-shadow: 0 3px #000 !important;
+  font-weight: bold;
+  color: #000;
+}
 #block-1,
-.active {
+.activeitem {
   border: 3px solid var(--brand) !important;
   background: #fff !important;
   box-shadow: var(--shadow) !important;
