@@ -261,12 +261,12 @@ flex {
   color: #00000080;
 }
 .vertical-progress-bar {
-  height: 10px !important;
+  height: 10px!important;
   width: 300px;
   transform: rotate(90deg);
   position: absolute;
   transform-origin: top left;
-}
+}     
 .vh-100 {
   height: var(--h, 100vh)!important;
 }
