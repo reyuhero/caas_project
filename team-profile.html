@@ -8,13 +8,12 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="public/library/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="public/fonts/css/all.min.css" />
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
   <title>Team profile</title>
 </head>
 
-<body class="d-flex flex-column bg-light" x-data="{ open: false, currentTab: about }">
+<body class="d-flex flex-column bg-light" >
    
   <nav class="z-3 sticky-top px-4 bg-white align-items-center position-relative text-center p-2 W-100 mb-2 d-flex justify-content-between shadow-md" style="font-family: serif !important;">
     <article class="align-items-center ">
@@ -263,26 +262,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/public/js/chart.min.js"></script>
-    <script>
-         
-      const ctx = document.getElementById('myChart');
-      const data = {
-        labels: ["Jan","Feb","Mar","Apr","May","June","Jul"],
-        datasets: [{
-          label: 'Service Views',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
-        }]
-      };
-      const config = {
-        type: 'line',
-        data: data,
-      }; 
-      const chart = new Chart(ctx, config)
-    </script>
+  
   </footer>
 </body>
 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="public/library/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/fonts/css/all.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <title>Team profile</title>
+</head>
+
+<body class="d-flex flex-column bg-light">
+     
+    <nav class="z-3 sticky-top px-4 bg-white align-items-center position-relative text-center p-2 W-100 mb-2 d-flex justify-content-between shadow-md"
+        style="font-family: serif !important;">
+        <article class="align-items-center ">
+            <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
+            <section class="cols-3 flow-column gap-2">
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Reports"><i class="fas fa-scroll"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark fs-7 fw-bold"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="KDS">KDS</button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Opportunities"><i class="fas fa-briefcase"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Messages"><i class="fas fa-comment-dots"></i></button>
+            </section>
+        </article>
+        <article class="gap-2">
+            <button class="btn btn-outline-secondary rounded-pill px-3">
+                <i class="fas fa-wallet pe-2"></i>
+                $0.00
+            </button>
+            <button class="btn btn-outline-secondary btn-circle">
+                <i class="fas fa-bookmark"></i>
+            </button>
+            <div class="dropdown">
+                <button
+                    class="btn btn-circle btn-outline-secondary rounded-pill border-0 cubic-bezier dropdown-toggle no-content"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+                    <li class="fs-8 px-3 py-3">
+                        <div class="fw-bold">Mohammad Reza Yousofi</div>
+                        <div class="text-black-50">yousofimreza@gmail.com</div>
+                    </li>
+                    <li class="border"><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch
+                            to Hiring</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
+                </ul>
+
+            </div>
+            <input type="text" name="search" id="search" placeholder="search"
+                class="1 border border-secondary px-3 rounded-pill">
+            <div class="dropdown">
+                <button class="btn btn-outline-gray p-0 rounded-pill border-0">
+                    <img src="/public/images/img.jpg" class=" rounded-pill dropdown-toggle no-content"
+                        style="width: 35px;" />
+                </button>
+                <div id="profile-dropdown" class="btn rounded-pill  overflow-hidden p-0 dropdown-toggle no-content"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-angle-down text-black-50"></i>
+                </div>
+                <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+                    <li class="fs-8 px-3 py-3">
+                        <div class="fw-bold ">Mohammad Reza Yousofi</div>
+                        <div class="text-black-50">yousofimreza@gmail.com</div>
+                    </li>
+                    <li class="border"><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch
+                            to Hiring</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
+                </ul>
+            </div>
+
+        </article>
+    </nav>
+
+    <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
+        <section class="gap-3" >
+            <!-- aside -->
+            <aside class="d-flex span flex-row bg-white rounded-4 gap-2 p-4" style="--span: 3; ">
+                <article class="col-1">
+                    <div class="progress vertical-progress-bar mx-3" >
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </article>
+                <article class="flex-column gap-4">
+                    <div class="fw-bold">get started</div>
+                    <div class="fw-bold">timeline & method</div>
+                    <div>Category</div>
+                    <div>skills</div>
+                    <div>Budget</div>
+                    <div>Scope</div>
+                    <div>Post detials</div>
+                </article>
+            </aside>
+
+            <article class="span flex-column bg-white align-content- p-4 rounded-4 " style="--span: 9;">
+                <div class="fs-2 fw-bold my-6">
+                    Timeline
+                </div>
+                <div class="py-3">please tell us more about the duration and timeline of your project</div>  
+                <article class="flex-wrap gap-4 mt-3">
+                    <div class="col-5">
+                        <label for="project-duration" class="form-label">project duration</label>
+                        <input type="text" class="form-control" name="project-duration" id="project-duration" placeholder="1-3 months">
+                    </div>
+                    <div class=" col-5">
+                        <label for="start-date" class="form-label">start date</label>
+                        <input type="date" class="form-control" name="start-date" id="start-date" placeholder="ASAP">
+                    </div>
+                    <div class="col-auto">
+                        <div class="fw-bold">Method</div>
+                        <div>How do you like to work with independent talents and Klabo teams of your project. <i class="fas fa-question-circle text-primary"></i></div>
+                    </div>
+                    <article class="col-5 flex-column p-4 justify-content-center align-items-center position-relative border border-2 bg-light rounded-4 shadow-md">
+                        <i class="fas fa-circle-check text-success position-absolute top-0 start-0 m-3"></i>
+                        <div class="fw-bold fs-6 mb-2 mt-2">milestone-based fixed price</div>
+                        <div class="fs-7 mb-3">milestone-based fixed price</div>
+                    </article>
+                    <article class="col-5 flex-column p-4 justify-content-center align-items-center position-relative border border-2 bg-light rounded-4 shadow-md">
+                        <i class="fas fa-circle position-absolute top-0 start-0 m-3 text-black-50"></i>
+                        <div class="fw-bold fs-6 mb-2 mt-2">Staff Augumentetion</div>
+                        <div class="fs-7 mb-3 text-center">Best for designated long-term work or to integrate the freelance team into your organisation.</div>
+                    </article>
+                    
+                </article>
+                <article class="justify-content-between mt-4">
+                    <button class="btn btn-outline-primary">reuse a previous project post</button>
+                    <article class="gap-3">
+                        <button class="btn btn-ouline-light">cancel</button>
+                        <button class="btn btn-primary">next: category</button>
+                    </article>
+                </article>
+            </article>
+        </section>
+    </main>
+
+
+    <footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </footer>
+</body>
+
+</html>
