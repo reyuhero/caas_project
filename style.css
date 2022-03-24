@@ -44,7 +44,7 @@ article{
   display: grid;
   grid-template-columns: repeat(var(--columns, 12), 1fr);
 }
-input:focus, input:focus-within, textarea:focus, textarea:focus-within {
+input#search:focus, input#search:focus-within {
   outline: 0;
 }
 .rounded-4 {
@@ -68,7 +68,7 @@ input[type="text"]#search:focus-visible {
   -ms-transition: var(--cubic-bezier);
   -o-transition: var(--cubic-bezier);
 }
-input[type="text"] {
+input[type="text"]#search {
   border: 0 !important;
   outline: 0 !important;
   background-color: #f3f3f3;
@@ -78,6 +78,17 @@ input[type="text"] {
   -moz-transition: var(--cubic-bezier);
   -ms-transition: var(--cubic-bezier);
   -o-transition: var(--cubic-bezier);
+}
+.btn-icon{
+  position: relative;
+}
+.btn-icon > span {
+  position: absolute !important;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  padding: 1px;
+  margin: 1px;
 }
 progress {
   border-radius: 7px; 

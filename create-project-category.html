@@ -112,13 +112,13 @@
                     </div>
                 </article>
                 <article class="flex-column gap-4">
-                    <div class="fw-bold">get started</div>
-                    <div class="fw-bold">timeline & method</div>
-                    <div class="fw-bold">Category</div>
-                    <div>skills</div>
-                    <div>Budget</div>
-                    <div>Scope</div>
-                    <div>Post details</div>
+                    <div class="fw-bold" id="started" onclick="route(this.id)">get started</div>
+                    <div class="fw-bold" id="timeline" onclick="route(this.id)">timeline & method</div>
+                    <div class="fw-bold" id="category" onclick="route(this.id)">Category</div>
+                    <div id="skills" onclick="route(this.id)">skills</div>
+                    <div id="budget" onclick="route(this.id)">Budget</div>
+                    <div id="scope" onclick="route(this.id)">Scope</div>
+                    <div id="post-details" onclick="route(this.id)">Post details</div>
                 </article>
             </aside>
 
@@ -222,7 +222,14 @@
             integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
         <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
         <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script>             
+            function route(id) {
+                var url= window.origin;
+                window.location = `${url}/create-project-${id}.html`
+            }
+        </script>
     </footer>
+
 </body>
 
 </html>
