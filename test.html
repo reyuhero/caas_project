@@ -36,8 +36,10 @@ tabbed-custom-element::part(active) {
   border-color: #0a84ff !important;
 }
     </style>
+    <link rel="import" href="import.html">
 </head>
 <body>
+    <my-component></my-component>
     <template id="tabbed-custom-element">
         <style type="text/css">
           *, ::before, ::after {
@@ -60,8 +62,7 @@ tabbed-custom-element::part(active) {
     
       <script>
 let template = document.getElementById("tabbed-custom-element");
-
-globalThis.customElements.define(template.id, class extends HTMLElement {
+class TabCompnoent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -87,7 +88,8 @@ globalThis.customElements.define(template.id, class extends HTMLElement {
       console.log(tab.part);
     })
   }
-});
+}
+globalThis.customElements.define(template.id, TabCompnoent);
       </script>
 </body>
 </html>

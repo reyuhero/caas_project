@@ -22,6 +22,19 @@
 section is grid
 article is flex
 */
+dialog{
+  max-width: 50ch;
+  margin: auto;
+  border: none;
+  border-radius: .5rem;
+}
+dialog > * {
+  margin: 0 0 .5rem 0;
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.384);
+} 
+
 my-grid {
   background-color: #4c4c4c;
   padding: 10px;
@@ -197,7 +210,7 @@ footer {
   --columns: 2;
 }
 .cols-1 {
-  --columns: 2;
+  --columns: 1;
 }
 .cols-4 {
   --columns: 4;
@@ -345,3 +358,4 @@ h7 {
     --columns: 2;
   }
 }
+

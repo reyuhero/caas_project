@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="public/library/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/fonts/css/all.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <!-- <link rel="import" href="/import.html"> -->
+    <title>Team profile</title>
+</head>
+
+<body class="d-flex flex-column bg-light position-relative">
+    <!-- <hello-world></hello-world> -->
+     <!-- navigation -->
+    <nav class="z-3 sticky-top px-4 bg-white align-items-center position-relative text-center p-2 W-100 mb-2 d-flex justify-content-between shadow-md"
+        style="font-family: serif !important;">
+        <article class="align-items-center ">
+            <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
+            <section class="cols-3 flow-column gap-2">
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Reports"><i class="fas fa-scroll"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark fs-7 fw-bold"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="KDS">KDS</button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Opportunities"><i class="fas fa-briefcase"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Messages"><i class="fas fa-comment-dots"></i></button>
+            </section>
+        </article>
+        <article class="gap-2">
+            <button class="btn btn-outline-secondary rounded-pill px-3">
+                <i class="fas fa-wallet pe-2"></i>
+                $0.00
+            </button>
+            <button class="btn btn-outline-secondary btn-circle">
+                <i class="fas fa-bookmark"></i>
+            </button>
+            <div class="dropdown">
+                <button
+                    class="btn btn-circle btn-outline-secondary rounded-pill border-0 cubic-bezier dropdown-toggle no-content"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+                    <li class="fs-8 px-3 py-3">
+                        <div class="fw-bold">Mohammad Reza Yousofi</div>
+                        <div class="text-black-50">yousofimreza@gmail.com</div>
+                    </li>
+                    <li class="border"><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch
+                            to Hiring</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
+                </ul>
+
+            </div>
+            <input type="text" name="search" id="search" placeholder="search"
+                class="1 border border-secondary px-3 rounded-pill">
+            <div class="dropdown">
+                <button class="btn btn-outline-gray p-0 rounded-pill border-0">
+                    <img src="/public/images/img.jpg" class=" rounded-pill dropdown-toggle no-content"
+                        style="width: 35px;" />
+                </button>
+                <div id="profile-dropdown" class="btn rounded-pill  overflow-hidden p-0 dropdown-toggle no-content"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-angle-down text-black-50"></i>
+                </div>
+                <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+                    <li class="fs-8 px-3 py-3">
+                        <div class="fw-bold ">Mohammad Reza Yousofi</div>
+                        <div class="text-black-50">yousofimreza@gmail.com</div>
+                    </li>
+                    <li class="border"><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch
+                            to Hiring</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
+                </ul>
+            </div>
+
+        </article>
+    </nav>
+    <!-- main content -->
+    <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3 ">
+        <article class="col-8 flex-column mx-auto p-4 bg-white rounded-4 justify-content-between mb-0 position-relative">
+            <i class="fas fa-times position-absolute top-0 end-0 p-2 m-1 text-danger btn-circle bg-light rounded-pill"></i>
+            <div class="mb-5">
+                <h5 class="mb-4">apply to the project post: <strong>Project post title, categories</strong></h5>
+                <label for="search-team mt-3 m">select a team that you are the owner / project manager of</label>
+                <div class="position-relative dropdown col-auto">
+                    <div class="position-relative dropdown-toggle no-content " data-bs-toggle="dropdown">
+                        <input type="text" id="search-team" class="form-control" placeholder="choose a team">
+                        <span class="position-absolute fas fa-chevron-down top-0 my-1 end-0 no-content p-2" ></span>
+                    </div>
+                    <ul class="dropdown-menu w-100 p-0" aria-labelledby="dropdownMenuButton1">
+                        <li class="p-2 border-bottom" value="1" onclick="console.log(this.value);">
+                            <article class="flex-column gap-2 px-2">
+                                <article class="gap-3 align-items-center">
+                                    <article class="btn-circle bg-primary p-4 bg-gradient" style="--bs-bg-opacity: 0.5;">
+                                        <i class="fas fa-users fs-4 bg-primary background-clip bg-gradient"></i>
+                                    </article>
+                                    <b>Code blob</b>
+                                    <div>Service categories</div>
+                                    <div>Skills</div>
+                                </article>
+                                <article class="gap-3 small">
+                                    <b>8 Payment verified members</b>
+                                    <div>4 Projects completed</div>
+                                    <div>You are its owner</div>
+                                </article>
+                            </article>
+                        </li>
+                        <li class="p-2 border-bottom" value="2">
+                            <article class="flex-column gap-2 px-2">
+                                <article class="gap-3 align-items-center">
+                                    <article class="btn-circle bg-success p-4 bg-gradient" style="--bs-bg-opacity: 0.5;">
+                                        <i class="fab fa-adn fs-4 bg-success background-clip bg-gradient"></i>
+                                    </article>
+                                    <b>A Code Studio</b>
+                                    <div>Service categories</div>
+                                    <div>Skills</div>
+                                </article>
+                                <article class="gap-3 small">
+                                    <b>2 Payment verified members</b>
+                                    <div>4 Projects completed</div>
+                                    <div>You are its owner</div>
+                                </article>
+                            </article>
+                        </li>
+                        <li class="p-2 border-bottom" value="3">
+                            <article class="flex-column gap-2 px-2">
+                                <article class="gap-3 align-items-center">
+                                    <article class="btn-circle bg-danger p-4 bg-gradient" style="--bs-bg-opacity: 0.5;">
+                                        <i class="fab fa-accusoft fs-4 bg-danger background-clip bg-gradient"></i>
+                                    </article>
+                                    <b>Code&Design</b>
+                                    <div>Service categories</div>
+                                    <div>Skills</div>
+                                </article>
+                                <article class="gap-3 small">
+                                    <b>0 Payment verified members</b>
+                                    <div>4 Projects completed</div>
+                                    <div>You are its owner</div>
+                                </article>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <article class="justify-content-between mt-3 mt-5 flex-grow-1">
+                <button class="btn btn-outline-gray open-dialog"><i class="fas me-2 fa-chevron-left"></i> Back</button>
+                <button class="btn btn-primary " type="button" onclick="route('apply-process-2')" data-toggle="modal" data-target="#exampleModal">Next <i class="fas ms-2 fa-chevron-right"></i></button>
+            </article>
+        </article>
+        
+        <!-- Modal -->
+        <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <dialog>
+        <article class="w-100 flex-column text-center position-relative">
+            <button class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-dialog"></button>
+            <div class="bg-primary text-center p-2 w-100 text-white px-5">Select a team</div>
+            <p class="py-3 px-5">You haven't created or joined a team yet</p>
+            <p>it's very simple and Quick:</p>
+            <article class="p-3 justify-content-between px-5">
+                <button class="btn btn-primary ">create a Team</button>
+                <button class="btn btn-primary open-find-team-result">Find a team</button>
+            </article>
+        </article>
+    </dialog>
+    <dialog id="find-team-result">
+        <article class="position-relative text-left flex-column w-100 p-3">
+            <button class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-find-team-result"></button>
+            <article class="gap-3 justify-content-center fs-2 mt-5">
+                <i class="fas fa-credit-card"></i>
+                <i class="fas fa-handshake"></i>
+            </article>
+            <p class="mt-3">sorry the team has 0 Payment verified member, in order to apply for a project,
+                 a team needs to have a least 1 member is payment verified.
+            </p>
+            <p>please go setup your payment or tell your team member to finish their payments.</p>
+            <p>you can setup your payment through:</p>
+            <p>new user checklist,</p>
+            <p>Go to settings -> whishlist</p>
+            <p>Go to Help -> tutorial -> Payment</p>
+            <button class="btn btn-primary align-self-end">Choose another team</button>
+        </article>
+    </dialog>
+    <footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script>             
+            function route(id) {
+                var url= window.origin;
+                window.location = `${url}/${id}.html`
+            }
+            const dialog = document.querySelector("dialog")
+            const openDialog = document.querySelector(".open-dialog")
+            const closeDialog = document.querySelector(".close-dialog")
+            openDialog.addEventListener('click', () => dialog.showModal());
+            closeDialog.addEventListener('click', () => dialog.close());
+            const resultDialog = document.querySelector("#find-team-result")
+            const openResultDialog = document.querySelector(".open-find-team-result")
+            const closeResultDialog = document.querySelector(".close-find-team-result")
+            openResultDialog.addEventListener('click', () => resultDialog.showModal());
+            closeResultDialog.addEventListener('click', () => resultDialog.close());
+            
+        </script>
+    </footer>
+</body>
+
+</html>
