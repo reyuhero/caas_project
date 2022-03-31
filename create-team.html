@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="public/library/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <title>Create a team</title>
+</head>
+
+<body class="d-flex flex-column bg-light">
+
+    <nav class="z-3 sticky-top px-4 bg-white align-items-center position-relative text-center p-2 W-100 mb-2 d-flex justify-content-between shadow-md"
+        style="font-family: serif !important;">
+        <article class="align-items-center ">
+            <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
+            <section class="cols-3 flow-column gap-2">
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Reports"><i class="fas fa-scroll"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark fs-7 fw-bold"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="KDS">KDS</button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Opportunities"><i class="fas fa-briefcase"></i></button>
+                <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Messages"><i class="fas fa-comment-dots"></i></button>
+            </section>
+        </article>
+        <article class="gap-2">
+            <button class="btn btn-outline-secondary rounded-pill px-3">
+                <i class="fas fa-wallet pe-2"></i>
+                $0.00
+            </button>
+            <button class="btn btn-outline-secondary btn-circle">
+                <i class="fas fa-bookmark"></i>
+            </button>
+            <div class="dropdown">
+                <button
+                    class="btn btn-circle btn-outline-secondary rounded-pill border-0 cubic-bezier dropdown-toggle no-content"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+                    <li class="fs-8 px-3 py-3">
+                        <div class="fw-bold">Mohammad Reza Yousofi</div>
+                        <div class="text-black-50">yousofimreza@gmail.com</div>
+                    </li>
+                    <li class="border"><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch
+                            to Hiring</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
+                </ul>
+            </div>
+            <input type="text" name="search" id="search" placeholder="search"
+                class="1 border border-secondary px-3 rounded-pill">
+            <div class="dropdown">
+                <button class="btn btn-outline-gray p-0 rounded-pill border-0">
+                    <img src="/public/images/img.jpg" class=" rounded-pill dropdown-toggle no-content"
+                        style="width: 35px;" />
+                </button>
+                <div id="profile-dropdown" class="btn rounded-pill  overflow-hidden p-0 dropdown-toggle no-content"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-angle-down text-black-50"></i>
+                </div>
+                <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+                    <li class="fs-8 px-3 py-3">
+                        <div class="fw-bold ">Mohammad Reza Yousofi</div>
+                        <div class="text-black-50">yousofimreza@gmail.com</div>
+                    </li>
+                    <li class="border"><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-city me-2 fs-4 text-black-50 bg-warning gradient background-clip"></i>Switch
+                            to Hiring</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-cog me-2 fs-4 text-black-50"></i>Settings</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-envelope me-2 fs-4 text-black-50"></i>Email preferences</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
+                    <li><a href="#" class="dropdown-item py-2"><i
+                                class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i>Log out</a></li>
+                </ul>
+            </div>
+
+        </article>
+    </nav>
+
+    <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
+
+        <!-- container -->
+        <div class="z-3">
+            <article class="flex-row gap-3">
+                <button class="btn btn-primary rounded-pill shadow-sm open-dialog">create a team</button>
+            </article>
+        </div>
+        <dialog id="find-team-result" style="min-width: 60ch;">
+            <article class="position-relative text-left flex-column w-100 p-3">
+                <button
+                    class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-dialog"></button>
+                <!-- first step -->
+                <step-content class="p-5 d-flex flex-column gap-3" id="step-1">
+                    <p>create your Klabo teams</p>
+                    <article>
+                        <div
+                            class="col-4 text-center d-flex flex-column justify-content-center align-items-center gap-2 me-3">
+                            <button class="btn btn-circle bg-light p-4 shadow-sm">
+                                <i class="fas fa-image fs-5"></i>
+                            </button>
+                            <div>upload team logo</div>
+                        </div>
+                        <div class="col">
+                            <label for="team-name" class="form-label">Klabo Team name</label>
+                            <input class="form-control" type="text" name="team-name" id="team-name">
+                        </div>
+                    </article>
+                    <article>
+                        <div
+                            class="col-4 d-flex flex-column justify-content-center align-items-center gap-2 me-3 text-center">
+                            <button class="btn btn-circle bg-light p-4 shadow-sm">
+                                <i class="fas fa-image fs-5"></i>
+                            </button>
+                            <div>upload team profile banner</div>
+                        </div>
+                        <div class="col">
+                            <label for="service-coverage" class="form-label">Klabo Team name</label>
+                            <input class="form-control" type="text" name="service-coverage" id="service-coverage">
+                            <div class="p-2 bg-light rounded-3 mt-2 pb-5">Can select multiple</div>
+                        </div>
+                    </article>
+                    <article class="justify-content-between align-items-end">
+                        <div>
+                            <div><small class="fs-9">Or one-click Creation </small><i
+                                    class="fas fa-question-circle"></i></div>
+                            <button class="btn btn-secondary">Convert your profile into a team</button>
+                        </div>
+                        <next-btn type="button" onclick="nextStep('#step-2')"
+                            class="btn btn-primary rounded-pill w-auto">next <i class="fas fa-arrow-right"></i>
+                        </next-btn>
+                    </article>
+                </step-content>
+                <!-- second step -->
+                <step-content class="p-5 d-none gap-3 d-flex flex-column" id="step-2">
+                    <p class="m-0">create your Klabo teams</p>
+                    <div class="col">
+                        <label for="tagline" class="form-label">
+                            Tagline 
+                            <i class="fas fa-question-circle text-primary"></i>
+                        </label>
+                        <input class="form-control" type="text" name="tagline" id="tagline">
+                    </div>
+                    
+                    <div class="col-auto">
+                        <label for="team-profile-url" class="form-label">Your klabo Team profile url: <i class="fas fa-question-circle text-primary ps-2"></i></label>
+                        <div class="d-flex flex-row gap-3 col align-items-center"> klabo.io/ <input type="text" name="team-profile-url" class="form-control" id="team-profile-url"></div>
+                    </div>
+
+                    <div>
+                        <label  class="form-label" for="description">Description <i class="fas fa-question-circle text-primary"></i></label>
+                        <textarea class="form-control" name="description" id="description" rows="5" placeholder="Why should other join you? why should clients hire you?"></textarea>
+                    </div>
+
+                    <article class="justify-content-between align-items-end">
+                        <back-btn type="button" onclick="nextStep('#step-1')" class="btn btn-outline-secondary rounded-pill">  <i class="fas fa-arrow-left"></i> Back</back-btn>
+                        <next-btn type="button" onclick="nextStep('#step-3')"
+                            class="btn btn-primary rounded-pill w-auto">next <i class="fas fa-arrow-right"></i>
+                        </next-btn>
+                    </article>
+
+                </step-content>
+                <!-- 3-step -->
+                <step-content class="p-5 d-none d-flex flex-column gap-3" id="step-3">
+                    <p class="m-0">create your Klabo teams</p>
+                    <article class="flex-row gap-3">
+                        <article class="flex-column gap-3">
+                            <div>add Service offerings <i class="fas fa-question-circle text-primary"></i></div>
+                            <button class="btn btn-primary">Create service offering</button>
+                            <div class="border border-2 rounded-4 bg-light position-relative" style="height: 8ch;">
+                                <button class="btn btn-outline-secondary position-absolute top-0 end-0 btn-circle m-1"><i class="fas fa-times text-dark "></i></button>
+                            </div>
+                            <div class="border border-2 rounded-4 bg-light position-relative" style="height: 8ch;">
+                                <button class="btn btn-outline-secondary position-absolute top-0 end-0 btn-circle m-1"><i class="fas fa-times text-dark "></i></button>
+                            </div>
+                        </article>
+                        <article class="flex-column gap-3">
+                            <div>
+                                Add Project portfolio <i class="fas fa-question-circle text-primary"></i>
+                            </div>
+                            <button class="btn btn-primary">Import from personal portfolio</button>
+                            <button class="btn btn-primary">Add project portfolio</button>
+                            <div class="border border-2 rounded-4 bg-light position-relative" style="height: 8ch;">
+                                <button class="btn btn-outline-secondary position-absolute top-0 end-0 btn-circle m-1"><i class="fas fa-times text-dark "></i></button>
+                            </div>
+                            <div class="border border-2 rounded-4 bg-light position-relative" style="height: 8ch;">
+                                <button class="btn btn-outline-secondary position-absolute top-0 end-0 btn-circle m-1"><i class="fas fa-times text-dark "></i></button>
+                            </div>
+                        </article>
+                    </article>
+                    <article class="justify-content-between align-items-end">
+                        <back-btn type="button" onclick="nextStep('#step-2')" class="btn btn-outline-secondary rounded-pill"> <i class="fas fa-arrow-left"></i> Back</back-btn>
+                        <next-btn type="button" onclick="nextStep('#step-4')"
+                            class="btn btn-primary rounded-pill w-auto">next <i class="fas fa-arrow-right"></i>
+                        </next-btn>
+                    </article>
+                </step-content>
+                <!-- 4 step -->
+                <step-content class="p-5 d-none d-flex flex-column gap-3" id="step-4" >
+                    <p class="m-0">create your Klabo teams</p>
+                    <div>Invite talents to join your klabo team 
+                        <i class="fas fa-question-circle text-primary tool-tip">
+                            <div class="top">
+                                You can work solo for the learn or you can invite and collobrate with other talents!
+                            </div>
+                        </i>
+                    </div>
+                    <div class="position-relative">
+                        <div class="fs-9 text-end position-absolute top-0 end-0">You can always do this later after team is created</div>
+                        recommendations
+                    </div>
+                    <article class="gap-3">
+                        <article class="col-6 gap-2 flex-column">
+                            <div class="border border-2 rounded-3 bg-light d-flex flex-row justify-content-between p-2 align-items-center">
+                                <div class="btn-circle bg-white p-4 shadow-sm ">
+                                    <i class="fas fa-image fs-5"></i>
+                                </div>
+                                <button class="btn btn-primary">invite</button>
+                            </div>
+                            <div class="border border-2 rounded-3 bg-light d-flex flex-row justify-content-between p-2 align-items-center">
+                                <div class="btn-circle bg-white p-4 shadow-sm ">
+                                    <i class="fas fa-image fs-5"></i>
+                                </div>
+                                <button class="btn btn-primary">invite</button>
+                            </div>
+                            <div class="border border-2 rounded-3 bg-light d-flex flex-row justify-content-between p-2 align-items-center">
+                                <div class="btn-circle bg-white p-4 shadow-sm ">
+                                    <i class="fas fa-image fs-5"></i>
+                                </div>
+                                <button class="btn btn-primary">invite</button>
+                            </div>
+                        </article>
+
+                        <article class="col-6 gap-2 flex-column">
+                            <div class="border border-2 rounded-3 bg-light d-flex flex-row justify-content-between p-2 align-items-center" style="height: 6.5ch;">
+                                 
+                            </div>
+                             
+                            <div class="border border-2 rounded-3 bg-light d-flex flex-row justify-content-between p-2 align-items-center" style="height: 6.5ch;">
+                                 
+                            </div>
+                             
+                            <div class="border border-2 rounded-3 bg-light d-flex flex-row justify-content-between p-2 align-items-center" style="height: 6.5ch;">
+                                 
+                            </div>
+                             
+                        </article>
+                    </article>
+                    
+                    <article class="align-items-center gap-3 align-self-end">
+                        <i class="fas fa-question-circle text-primary"></i>
+                        <button class="btn btn-primary">Post Talent Recruitment</button>
+                    </article>
+                    <article class="justify-content-between align-items-end">
+                        <back-btn type="button" onclick="nextStep('#step-3')" class="btn btn-outline-secondary rounded-pill"> <i class="fas fa-arrow-left"></i> Back</back-btn>
+                        <button type="button" class="btn btn-primary rounded-pill w-auto">Preview <i class="fas fa-arrow-right"></i></button>
+                        <button type="button" role="button" class="btn btn-success rounded-pill w-auto close-dialog">Complete <i class="fas fa-check"></i></button>
+                    </article>
+                </step-content>
+            </article>
+        </dialog>
+    </main>
+
+    <footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/public/js/chart.min.js"></script>
+        <script src="/public/js/index.js"></script>
+    </footer>
+</body>
+
+</html>
