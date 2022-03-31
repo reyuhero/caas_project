@@ -18,10 +18,8 @@ const nextStep = (step) => {
 
 const QuestionMarkTemplate = '<i class="fas fa-question-circle text-primary"></i>'
 class QuestionMark extends HTMLLIElement {
-    constructor(){
-        super();
-        this.attachShadow({mode: "open"})
-        this.shadowRoot.appendChild(QuestionMarkTemplate)
+    connectedCallback(){
+        this.innerHTML= QuestionMarkTemplate
     }
 }
 globalThis.customElements.define('question-mark', QuestionMarkTemplate)

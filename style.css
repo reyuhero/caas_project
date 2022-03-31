@@ -220,7 +220,8 @@ footer {
 }
 
 .span {
-  grid-column: span var(--span, 1);
+  --g-col: span var(--span, 1);
+  grid-column: var(--g-col);
 }
 .rounded-5 {
   border-radius: 20px !important;
@@ -406,4 +407,51 @@ h7 {
   transform:translate(-50%,-50%) rotate(45deg);
   background-color:#555555;
   box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+summary {
+  list-style: none;
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+}
+details {
+  overflow: hidden;
+}
+summary::after {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  margin-left: auto;
+}
+details[open] > summary::after {
+  content: "\f078"; 
+}
+details > summary::after {
+  content: "\f054"; 
+}
+details > article * {
+  text-decoration: none;
+  padding: .5rem 1rem;
+  color: #000;
+  list-style-type: none;
+  width: auto;
+  height: auto;
+}
+details > article *:hover {
+  background-color: #666;
+  color: #fff;
+}
+details > article > ul > li::before {
+  content: "\f061";
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+
+}
+details > article > ul > li:hover::before{
+  transform: translateX(10px);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
