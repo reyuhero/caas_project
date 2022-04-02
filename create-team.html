@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="public/library/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="public/fonts/css/all.min.css" />
     <title>Create a team</title>
 </head>
 
@@ -105,13 +104,13 @@
         <!-- container -->
         <div class="z-3">
             <article class="flex-row gap-3">
-                <button class="btn btn-primary rounded-pill shadow-sm open-dialog">create a team</button>
+                <button class="btn btn-primary rounded-pill shadow-sm " onclick="openModal('create-team')">create a team</button>
             </article>
         </div>
-        <dialog id="find-team-result" style="min-width: 60ch;">
+        <dialog id="create-team" style="min-width: 60ch;">
             <article class="position-relative text-left flex-column w-100 p-3">
-                <button
-                    class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-dialog"></button>
+                <button onclick="openModal('create-team',0)"
+                    class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn "></button>
                 <!-- first step -->
                 <step-content class="p-5 d-flex flex-column gap-3" id="step-1">
                     <p>create your Klabo teams</p>
@@ -276,7 +275,7 @@
                     <article class="justify-content-between align-items-end">
                         <back-btn type="button" onclick="nextStep('#step-3')" class="btn btn-outline-secondary rounded-pill"> <i class="fas fa-arrow-left"></i> Back</back-btn>
                         <button type="button" class="btn btn-primary rounded-pill w-auto">Preview <i class="fas fa-arrow-right"></i></button>
-                        <button type="button" role="button" class="btn btn-success rounded-pill w-auto close-dialog">Complete <i class="fas fa-check"></i></button>
+                        <button type="button" role="button" class="btn btn-success rounded-pill w-auto " onclick="openModal('create-team',0)">Complete <i class="fas fa-check"></i></button>
                     </article>
                 </step-content>
             </article>

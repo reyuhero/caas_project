@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="public/library/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="public/fonts/css/all.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+     
     <!-- <link rel="import" href="/import.html"> -->
     <title>Team profile</title>
 </head>
@@ -171,48 +170,28 @@
                 </div>
             </div>
             <article class="justify-content-between mt-3 mt-5 flex-grow-1">
-                <button class="btn btn-outline-gray open-dialog"><i class="fas me-2 fa-chevron-left"></i> Back</button>
+                <button class="btn btn-outline-gray" onclick="openModal('alert-select-team')"><i class="fas me-2 fa-chevron-left"></i> Back</button>
                 <button class="btn btn-primary " type="button" onclick="route('apply-process-2')" data-toggle="modal" data-target="#exampleModal">Next <i class="fas ms-2 fa-chevron-right"></i></button>
             </article>
         </article>
-        
-        <!-- Modal -->
-        <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                ...
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            </div>
-        </div>
+         
     </main>
 
-    <dialog>
+    <dialog id="alert-select-team">
         <article class="w-100 flex-column text-center position-relative">
-            <button class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-dialog"></button>
+            <button onclick="openModal('alert-select-team',0)" class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-dialog"></button>
             <div class="bg-primary text-center p-2 w-100 text-white px-5">Select a team</div>
             <p class="py-3 px-5">You haven't created or joined a team yet</p>
             <p>it's very simple and Quick:</p>
             <article class="p-3 justify-content-between px-5">
                 <button class="btn btn-primary ">create a Team</button>
-                <button class="btn btn-primary open-find-team-result">Find a team</button>
+                <button class="btn btn-primary" onclick="openModal('find-team')">Find a team</button>
             </article>
         </article>
     </dialog>
-    <dialog id="find-team-result">
+    <dialog id="find-team">
         <article class="position-relative text-left flex-column w-100 p-3">
-            <button class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-find-team-result"></button>
+            <button onclick="openModal('find-team', 0)" class="fas fa-times position-absolute top-0 end-0 text-danger p-2 m-1 btn-circle bg-light btn close-find-team-result"></button>
             <article class="gap-3 justify-content-center fs-2 mt-5">
                 <i class="fas fa-credit-card"></i>
                 <i class="fas fa-handshake"></i>
@@ -225,7 +204,7 @@
             <p>new user checklist,</p>
             <p>Go to settings -> whishlist</p>
             <p>Go to Help -> tutorial -> Payment</p>
-            <button class="btn btn-primary align-self-end">Choose another team</button>
+            <button class="btn btn-primary align-self-end" onclick="openModal('find-team',0)">Choose another team</button>
         </article>
     </dialog>
     <footer>
@@ -233,21 +212,14 @@
             integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
         <script src="/public/library/bootstrap/js/bootstrap.min.js"></script>
         <script src="/public/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/public/js/index.js"></script>
+
         <script>             
             function route(id) {
                 var url= window.origin;
                 window.location = `${url}/${id}.html`
             }
-            const dialog = document.querySelector("dialog")
-            const openDialog = document.querySelector(".open-dialog")
-            const closeDialog = document.querySelector(".close-dialog")
-            openDialog.addEventListener('click', () => dialog.showModal());
-            closeDialog.addEventListener('click', () => dialog.close());
-            const resultDialog = document.querySelector("#find-team-result")
-            const openResultDialog = document.querySelector(".open-find-team-result")
-            const closeResultDialog = document.querySelector(".close-find-team-result")
-            openResultDialog.addEventListener('click', () => resultDialog.showModal());
-            closeResultDialog.addEventListener('click', () => resultDialog.close());
+             
             
         </script>
     </footer>

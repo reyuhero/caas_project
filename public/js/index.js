@@ -1,8 +1,12 @@
-const dialog = document.querySelector("dialog")
-const openDialog = document.querySelector(".open-dialog")
-const closeDialog = document.querySelector(".close-dialog")
-openDialog.addEventListener('click', () => dialog.showModal());
-closeDialog.addEventListener('click', () => dialog.close());
+console.log("javascript is running")
+const openModal = (id,open=1) => {
+    const modal = document.getElementById(id);
+    if(open === 0)
+    modal.close();
+    else
+    modal.showModal();
+} 
+
 const nextStep = (step) => {
     console.log(step);
     const stepContent = document.querySelector(step);
@@ -15,11 +19,13 @@ const nextStep = (step) => {
             item.classList.add('d-none')
     })
 }
-
-const QuestionMarkTemplate = '<i class="fas fa-question-circle text-primary"></i>'
-class QuestionMark extends HTMLLIElement {
-    connectedCallback(){
-        this.innerHTML= QuestionMarkTemplate
-    }
+function goto(id) {
+    var url= window.origin;
+    window.location = `${url}/${id}.html`
 }
-globalThis.customElements.define('question-mark', QuestionMarkTemplate)
+
+customElements.define('x-markup', class extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = "<b>I'm an x-foo-with-markup!</b>";
+  }
+});  
