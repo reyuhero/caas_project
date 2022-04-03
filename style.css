@@ -18,13 +18,30 @@
 .shadow-md {
   box-shadow: 0 0 10px 10px #00000011;
 }
- 
+*[flex] {
+  display: flex;
+} 
+*[column] {
+  flex-flow: column;
+}
+*[align-center] {
+  align-items: center;
+}
+*[justify-center] {
+  justify-content: center;
+}
+*[justify-between] {
+  justify-content: space-between;
+}
 dialog{
   max-width: 50ch;
   margin: auto;
   border: none;
   border-radius: .5rem;
   position: relative;
+}
+a[no-deco] {
+  text-decoration: none;
 }
 dialog > * {
   margin: 0 0 .5rem 0;
