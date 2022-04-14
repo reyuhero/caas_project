@@ -1,7 +1,7 @@
 import Shape from '@/components/shape';
 import ShapeCircle from '@/components/shape-circle';
 import React, { ChangeEvent, SyntheticEvent, useEffect } from 'react';
-import { useForm } from '@inertiajs/inertia-react';
+import { Link, useForm } from '@inertiajs/inertia-react';
 import route from 'ziggy-js';
 import Nav from '@/components/Nav';
 import Spinner from '@/components/Spinner';
@@ -33,7 +33,7 @@ const SignIn = ({ status, canResetPassword}: Props) => {
     return (
         <>
             <Nav>
-                <div className="ps-3">CAAS</div>
+                <Link href='/'><div className="ps-3 fs-2 fw-bold btn m-0 p-0">CAAS</div></Link>
             </Nav>
             <main className="d-flex flex-column justify-content-center position-relative m-3 px-md-5">
                 <Shape />

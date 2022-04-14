@@ -2,12 +2,12 @@ import Nav from '@/components/Nav';
 import Shape from '@/components/shape';
 import ShapeCircle from '@/components/shape-circle';
 import Spinner from '@/components/Spinner';
-import { useForm } from '@inertiajs/inertia-react';
+import { Link, useForm } from '@inertiajs/inertia-react';
 import React, { ChangeEvent, useEffect } from 'react';
 import route from 'ziggy-js';
 
 const SignUp = () => {
-    const { data, errors, post, processing, reset, setData, }= useForm({
+    const { data, errors, post, processing, reset, setData }= useForm({
         name: '',
         email: '',
         password: '',
@@ -29,7 +29,7 @@ const SignUp = () => {
     return (
         <>
         <Nav>
-            <div className="ps-3 fs-2 fw-bold ">CAAS</div>
+            <Link href='/'><div className="ps-3 fs-2 fw-bold btn m-0 p-0">CAAS</div></Link>
             <div className="fs-7">
                 Already have an account? <a href={route('signin')} className="link-dark fw-bold px-2">Log in</a>
             </div>
