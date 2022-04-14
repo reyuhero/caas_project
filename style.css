@@ -541,8 +541,12 @@ details > article a {
   list-style-type: none;
   width: auto;
   height: auto;
+} 
+ details > article > li:hover, details > article a:hover {
+  background-color: #666 !important;
+  color: #fff !important;
 }
-details > article a:hover, details > article > li:hover {
+aside .active {
   background-color: #666 !important;
   color: #fff !important;
 }
@@ -550,14 +554,14 @@ details > article > ul > li::before {
   content: "\f061";
   font-family: "Font Awesome 5 Free"; 
   font-weight: 900; 
-  transform: translateX(-20px);
+  transform: translateX(-1rem);
   opacity: 0;
   transition: all 0.3s ease-in-out;
   color: #fff;
-
+  position: absolute;
 }
 details > article > ul > li:hover::before{
-  transform: translateX(10px);
+  transform: translateX(.5rem);
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
