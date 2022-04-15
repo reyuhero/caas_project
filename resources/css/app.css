@@ -3,7 +3,6 @@
 @import 'tailwindcss/utilities'; */
 @layer reset, components, defaults, framework, utilities;
 @import url("./bootstrap/bootstrap.min.css") layer(framework);
-
 :root {
   --brand: #ffc107;
   --brand-light-shadow: #ffc10771;
@@ -12,12 +11,14 @@
   --cubic-bezier: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
 @layer reset {
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     text-transform: capitalize;
+    text-decoration: none;
   }
   *[flex] {
     display: flex;

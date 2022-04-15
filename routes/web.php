@@ -34,7 +34,11 @@ Route::get('/sign-in', function () {
 Route::get('/sign-up', function () {
     return Inertia::render('SignUp');
 })->name('signup');
-
+Route::prefix('freelancer')->group(function() {
+    Route::get('/dashboard', function(){
+        return Inertia::render('Freelancer/Dashboard');
+    });
+});
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

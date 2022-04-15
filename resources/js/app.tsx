@@ -4,9 +4,12 @@ import React from 'react';
 import { createInertiaApp } from '@inertiajs/inertia-react';
 import { InertiaProgress } from '@inertiajs/progress';
 import { createRoot } from 'react-dom/client';
-
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
-
+declare module 'react' {
+    interface CSSProperties {
+        [key: `--${string}`]: string | number
+    }
+}
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => require(`./Pages/${name}`),

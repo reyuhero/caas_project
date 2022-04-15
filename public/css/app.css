@@ -203,12 +203,14 @@ legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fi
   --cubic-bezier: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
 @layer reset {
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     text-transform: capitalize;
+    text-decoration: none;
   }
   *[flex] {
     display: flex;

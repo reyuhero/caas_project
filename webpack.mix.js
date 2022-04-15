@@ -20,7 +20,11 @@ mix.ts('resources/js/app.tsx', 'public/js')
     .alias({
         '@': 'resources/js',
     });
-
+mix.webpackConfig({
+    stats: {
+        children: true
+    }
+})
 if (mix.inProduction()) {
     mix.version();
 }
