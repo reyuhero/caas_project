@@ -11,21 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.ts('resources/js/app.tsx', 'public/js')
-    .react()
+mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
-        require('postcss-import'),
-        require('autoprefixer'),
-    ])
-    .alias({
-        '@': 'resources/js',
-    });
-mix.webpackConfig({
-    stats: {
-        children: true
-    }
-})
-if (mix.inProduction()) {
-    mix.version();
-}
-// require('tailwindcss'),
+        //
+    ]);

@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,32 +13,8 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/home', function () {
-    return Inertia::render('Home');
-});
-Route::get('/sign-in', function () {
-    return Inertia::render('SignIn');
-})->name('signin');
-
-Route::get('/sign-up', function () {
-    return Inertia::render('SignUp');
-})->name('signup');
-Route::prefix('freelancer')->group(function() {
-    Route::get('/dashboard', function(){
-        return Inertia::render('Freelancer/Dashboard');
-    });
-});
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+Route::view('/', 'home')->name('home');
+Route::get('login',\App\Http\Livewire\Login::class)->name('login');
+Route::get('register',\App\Http\Livewire\Register::class)->name('register');
+ROute::get('freelancer/dashboard',\App\Http\Livewire\Freelancer\Dashboard::class)->name('freelancer.dashboard');
+ROute::get('client/dashboard',\App\Http\Livewire\Client\Dashboard::class)->name('client.dashboard');
