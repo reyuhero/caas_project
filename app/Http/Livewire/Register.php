@@ -13,7 +13,7 @@ class Register extends Component
         'email' => '',
         'password' => '',
         'password_confirmation' => '',
-        'type' => "1",
+        'type' => 1,
     ];
     protected $messages = [
 
@@ -40,7 +40,7 @@ class Register extends Component
         $this->form['password'] = bcrypt($this->form['password']);
         User::create($this->form);
         return redirect(route('login'));
-    } 
+    }
     public function render()
     {
         return view('livewire.register', ['title' => 'register'])->extends('layouts.master')->section('content');

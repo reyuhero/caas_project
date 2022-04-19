@@ -84,6 +84,7 @@
 
     </article>
 </nav>
+
 @endsection
 
 <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
@@ -286,3 +287,4 @@
         </section>
     </div>
 </main>
+<a href="#" class="dropdown-item py-2"><i class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i><livewire:logout/></a>

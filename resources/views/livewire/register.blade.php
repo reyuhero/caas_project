@@ -4,12 +4,12 @@
         class="z-3 bg-white relative text-center  p-3 W-100 mb-5 d-flex justify-content-between shadow-md align-items-center ">
         <div class="ps-3 fs-2 fw-bold " style="font-family: serif !important;">CAAS</div>
         <div class="fs-7">
-            Already have an account? <a href="/login.html" class="link-dark fw-bold px-2">Log in</a>
+            Already have an account? <a href="{{ route('login') }}" class="link-dark fw-bold px-2">Log in</a>
         </div>
     </nav>
 @endsection
 <main class="d-flex flex-column justify-content-center position-relative m-3 px-md-5">
-    <svg viewBox="0 0 155 134" opacity="1" style="width: 16rem; top: -100px;" class="start-0 position-absolute blur z-1">
+    <svg viewBox="0 0 155 134" opacity="1" style="width: 16rem; top: -100px; z-index: -10" class="start-0 position-absolute blur z-1">
         <linearGradient gradientTransform="rotate(140)" id="react-aria7205925976-1" x1="-100%" x2="0">
             <stop offset="0%" stop-color="rgba(19, 19, 19, 0)"></stop>
             <stop offset="100%" stop-color="rgba(143, 111, 219, 0.8)"></stop>
@@ -17,7 +17,7 @@
         <path d="M 155 134 H 0 V 73.7 h 21.2 V 36.8 h 20.3 V 0 H 155 v 134 z" fill="url(#react-aria7205925976-1)"
             stroke="none"></path>
     </svg>
-    <svg viewBox="-2 49 104 52" style="width: 10rem; top: -50px;" class="end-0 top-50 position-absolute blur z-1"
+    <svg viewBox="-2 49 104 52" style="width: 10rem; top: -50px; z-index: -10" class="end-0 top-50 position-absolute blur z-1"
         opacity="1">
         <linearGradient id="react-aria1013596315-2">
             <stop offset="0%" stop-color="rgba(19, 19, 19, 0)"></stop>
@@ -31,15 +31,15 @@
         class="bg-white border border-white col col-lg-4 col-lg-7 col-md-9 col-xl-6 d-flex flex-column justify-content-center mx-auto rounded-5 shadow-md text-center z-2"
         style="--bs-bg-opacity: 0.3;">
         <div class="d-flex flex-column col-12 pt-5 px-4" >
-            <label for="type" class="h2 fw-bold" >Sign up as {{ $form['type'] === "1" ? "an independent": "a client"}}</label>
+            <label for="type" class="h2 fw-bold" >Sign up as {{ $form['type'] === 1 ? "an independent": "a client"}}</label>
             <input type="text" hidden id="type" wire:model="form.type" class="form-control" />
             <div class="d-flex mx-auto gap-2">
-                @if($form['type'] === "1")
+                @if($form['type'] === 1)
                     <p class="m-0">Not looking to get hired?</p>
-                    <button class="border-0 bg-none fw-bold underline cubic-bezier " type="button" wire:click="$set('form.type', '0')">Sign up as a client <i class="fas fa-info-circle"></i></button>
-                @elseif($form['type'] === "0")
+                    <button class="border-0 bg-none fw-bold underline cubic-bezier " type="button" wire:click="$set('form.type', 0)">Sign up as a client <i class="fas fa-info-circle"></i></button>
+                @elseif($form['type'] === 0)
                     <p class="m-0">Not looking to hire on CAAS?</p>
-                    <button class="border-0 bg-none fw-bold underline cubic-bezier " type="button" wire:click="$set('form.type', '1')">Sign up as an independent <i class="fas fa-info-circle"></i></button>
+                    <button class="border-0 bg-none fw-bold underline cubic-bezier" type="button" wire:click="$set('form.type', 1)">Sign up as an independent <i class="fas fa-info-circle"></i></button>
                 @endif
             </div> 
         </div>

@@ -32,14 +32,15 @@ class Login extends Component
         $this->validate();
         
         Auth::attempt($this->form);
-        $type = Auth::user()->getType();
-        if($type === 0)
-            return redirect(route('freelancer.dashboard'));
-        elseif($type === 1)
-            return redirect(route('client.dashboard'));
-        else
-            return redirect(route('home'));
-
+        $user = Auth::user();
+        switch($user->type){
+            case "freelancer":
+                return redirect(route('freelancer.dashboard'));
+            case "client":
+                return redirect(route('client.dashboard'));
+            default:
+                return session()->flash('error', 'not loged in');
+        }
     }
     public function render()
     {
