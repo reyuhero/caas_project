@@ -1,3 +1,5 @@
 <div>
-    {{-- Close your eyes. Count to one. That is how long forever feels. --}}
+    list project
+    <a type="btn" class="btn" href='{{ route("freelancer.create.project") }}'>create project</a>
+
 </div>

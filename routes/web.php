@@ -22,6 +22,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Livewire'], func
     ],function(){
         Route::get("/dashboard", Dashboard::class)->name('freelancer.dashboard');
         Route::get("/project/create", Project\Create::class)->name('freelancer.create.project');
+        Route::get("/project", Project\Index::class)->name('freelancer.project');
     });
     Route::group(['middleware'=> ['auth','user-access:client'], 'namespace' => 'Client'],function(){
         Route::get("/client/dashboard", Dashboard::class)->name('client.dashboard');

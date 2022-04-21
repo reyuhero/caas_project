@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <title>@yield('title', 'Caas Project')</title>
     <script defer src="{{ asset('assets/js/alpine.min.js') }}"></script>
+    @yield('head')
     @livewireStyles
 </head>
 <body class="d-flex flex-column">

@@ -8,6 +8,8 @@ class Index extends Component
 {
     public function render()
     {
-        return view('livewire.freelancer.project.index');
+        return view('livewire.freelancer.project.index')
+            ->extends('layouts.freelancer-layout')
+            ->section('content');
     }
 }

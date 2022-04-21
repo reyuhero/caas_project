@@ -35,7 +35,6 @@ class Register extends Component
     ];
     public function submit()
     {
-        dd($this->form);
         $this->validate();
         $this->form['password'] = bcrypt($this->form['password']);
         User::create($this->form);
@@ -44,5 +43,5 @@ class Register extends Component
     public function render()
     {
         return view('livewire.register', ['title' => 'register'])->extends('layouts.master')->section('content');
-    } 
+    }
 }

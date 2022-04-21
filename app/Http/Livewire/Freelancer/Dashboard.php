@@ -12,7 +12,7 @@ class Dashboard extends Component
     public function render()
     {
         return view('livewire.freelancer.dashboard')
-        ->extends('layouts.master')
+        ->extends('layouts.freelancer-layout')
         ->section('content');
     }
 }

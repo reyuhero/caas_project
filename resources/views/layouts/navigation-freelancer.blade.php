@@ -54,16 +54,19 @@
         </div>
         <input type="text" name="search" id="search" placeholder="search"
             class="1 border border-secondary px-3 rounded-pill">
-        <div class="dropdown">
-            <button class="btn btn-outline-gray p-0 rounded-pill border-0">
+        <div class="dropdown" x-data="{ open: false }">
+            <button class="btn btn-outline-gray p-0 rounded-pill border-0" @click="open = !open">
                 <img src="/public/images/img.jpg" class=" rounded-pill dropdown-toggle no-content"
                     style="width: 35px;" />
             </button>
-            <div id="profile-dropdown" class="btn rounded-pill  overflow-hidden p-0 dropdown-toggle no-content"
-                data-bs-toggle="dropdown" aria-expanded="false">
+            <div id="profile-dropdown"
+                class="btn rounded-pill overflow-hidden p-0 dropdown-toggle no-content"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                @click="open = !open">
                 <i class="fas fa-angle-down text-black-50"></i>
             </div>
-            <ul class="dropdown-menu shadow-md mt-3 rounded-5 border-0 p-0" aria-labelledby="profile-dropdown">
+            <ul x-show="open" class="show-menu" >
                 <li class="fs-8 px-3 py-3">
                     <div class="fw-bold ">Mohammad Reza Yousofi</div>
                     <div class="text-black-50">yousofimreza@gmail.com</div>
@@ -83,5 +86,4 @@
         </div>
     </article>
 </nav>
-<a href="#" class="dropdown-item py-2"><i class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i><livewire:logout/></a>
 

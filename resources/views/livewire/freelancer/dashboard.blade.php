@@ -1,8 +1,4 @@
-@section('title', 'dashboard')
-@section('header')
-    @include('layouts.navigation-freelancer')
-@endsection
-
+@section('title', 'Freelancer Dashboard')
 <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
     <!-- container -->
     <div class="z-3">
