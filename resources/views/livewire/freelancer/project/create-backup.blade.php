@@ -3,77 +3,38 @@
 @section('header')
     @include('layouts.navigation-freelancer')
 @endsection
-<main class="container">
-    <style>
-        aside>* {
-            padding: 0;
-            margin: 0;
-        }
+<main>
 
-        .list {
-            list-style-type: none;
-        }
-
-        .list>li {
-            position: relative;
-            padding-left: 30px;
-            padding-block: 10px;
-            font-weight: normal;
-            transition: font-weight 0.3s ease-in-out;
-        }
-
-        .list>li::after {
-            content: attr(aria-label);
-            background-color: hsl(216, 98%, 80%);
-            color: #fff;
-            font-size: 10px;
-            display: grid;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            top: 50%;
-            left: 0;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            align-content: space-around;
-            justify-content: center;
-            justify-items: center;
-            align-items: center;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .list>li.active-step {
-            font-weight: bold;
-            transition: font-weight 0.3s ease-in-out;
-        }
-
-        .list>li.active-step::after {
-            background-color: var(--bs-primary);
-            width: 30px;
-            height: 30px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .list>li::before {
-            content: "";
-            position: absolute;
-            background-color: var(--bs-primary);
-            top: 50%;
-            left: -1px;
-            height: 100%;
-            width: 1px;
-        }
-
-        .list>li:last-child::before {
-            content: none !important;
-        }
-
-    </style>
     <script>
         document.addEventListener('alpine:init', function() {
-            Alpine.store("data", {
-                skills: @js($skills),
+            Alpine.store('step', {
                 skill_open: false,
+                categories: @js($categories),
+                selected_categories: function(){
+                    const data = @js($selected_categories);
+                    console.log('selected categories', data);
+                    return data;
+                },
+                skills_selected: [],
+                addToCategoryList: function(item) {
+                    var res = this.selected_categories.includes(item);
+                    if (!res) this.selected_categories.push(item);
+                },
+                removeCategory: function(item) {
+                    this.selected_categories = this.selected_categories.filter(i => i.id !== item.id);
+                },
+                addToSkillSelected: function(item) {
+                    var res = this.skills_selected.includes(item)
+                    if (!res) this.skills_selected.push(item);
+                },
+                search_skill: '',
+                skills: function() {
+                    const data = @json($skills);
+                    return data;
+                },
+                removeItem: function(item) {
+                    this.skills_selected = this.skills_selected.filter(i => i.id !== item.id)
+                },
                 skills_grouped: function() {
                     const data = @json($skills);
                     var grouped = data.reduce((dictionary, p) => {
@@ -81,17 +42,18 @@
                         dictionary[p.category.name].push(p);
                         return dictionary;
                     }, {})
-                    console.log('grouped', grouped)
                     return grouped;
                 },
-                post_review: false,
+                submit: function(){
+
+                },
                 current: {
                     id: 'started',
                     title: 'get started',
                     progress: '5%',
                     status: false,
                 },
-                steps: [{
+                items: [{
                         id: 'started',
                         title: 'get started',
                         progress: '5%',
@@ -132,25 +94,39 @@
                         progress: '100%',
                         title: 'post details',
                         status: false,
-                    }
+                    },
+                    {
+                        id: 'review',
+                        progress: '100%',
+                        title: 'post review',
+                        status: false,
+                    },
                 ]
             })
         })
     </script>
-    <form x-data="{ store: $store.data }" class="d-flex" x-data wire:submit.prevent='submit'>
-        <aside class="d-flex col-3 flex-row bg-white rounded-4 gap-2 p-4 h-100">
-            <ul class="list">
-                <template x-for="(step, index) in store.steps">
-                    <li :aria-label="index" :key="step.id" type="button" :disabled="step.status" :id="step.id"
-                        :class="{'active-step': store.current.id === step.id}" @click="store.current.id = step.id">
-                        <div x-text="step.title"></div>
-                    </li>
+    <form class="gap-3 grid" x-data wire:submit.prevent='submit'>
+
+        <!-- aside -->
+        <aside class="d-flex span flex-row bg-white rounded-4 gap-2 p-4 h-100" style="--span: 3; ">
+            <article class="col-1">
+                <div class="progress vertical-progress-bar mx-3">
+                    <div class="progress-bar" role="progressbar" :style="{width: $store.step.current.progress}"
+                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </article>
+            <article class="flex-column gap-4">
+                <template x-for="step in $store.step.items">
+                    <input class="btn btn-none p-0" type="button" :value="step.title" :key="step.id"
+                        :disabled="step.status" :id="step.id"
+                        :class="{'fw-bold' : $store.step.current.id === step.id, 'd-none': step['id'] === 'review'}"
+                        @click="$store.step.current = step" />
                 </template>
-            </ul>
+            </article>
         </aside>
         {{-- started --}}
-        <article x-show="store.current.id === 'started'"
-            class="col-9 flex-column bg-white align-content-center p-4 rounded-4">
+        <article x-show=" $store.step.current.id === 'started'"
+            class=" span flex-column bg-white align-content-center p-4 rounded-4" style="--span: 9;">
             <div class="fs-2 fw-bold my-6">
                 Get Started
             </div>
@@ -181,14 +157,15 @@
                 <button type="button" class="btn btn-outline-primary">reuse a previous project post</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">cancel</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[1]">next: timeline
-                        & method</button>
+                    <button type="button" class="btn btn-primary"
+                        @click="$store.step.current = $store.step.items[1]">next: timeline &
+                        method</button>
                 </article>
             </article>
         </article>
         {{-- timeline --}}
-        <article x-show="store.current.id === 'timeline'"
-            class="col-9 flex-column bg-white align-content- p-4 rounded-4 ">
+        <article x-show=" $store.step.current.id === 'timeline'"
+            class="span flex-column bg-white align-content- p-4 rounded-4 " style="--span: 9;">
             <div class="fs-2 fw-bold my-6">
                 Timeline
             </div>
@@ -238,29 +215,36 @@
                 <button type="button" class="btn btn-outline-primary">reuse a previous project post</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">cancel</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[2]">next:
+                    <button type="button" class="btn btn-primary"
+                        @click="$store.step.current = $store.step.items[2]">next:
                         category</button>
                 </article>
             </article>
         </article>
         {{-- category --}}
-        <article x-show="store.current.id === 'category'"
-            class="col-9 flex-column bg-white align-content- p-4 rounded-4">
+        <article x-show="$store.step.current.id === 'category'"
+            class="span flex-column bg-white align-content- p-4 rounded-4 " style="--span: 9;">
             <div class="fs-2 fw-bold my-6">
                 Category
             </div>
             <div class="py-3">Select and search the category you need.</div>
             <article class="flex-wrap gap-4 mt-3">
-                <article class="w-100 row ">
+                <article class="w-100 row " x-show="$store.step.selected_categories.length > 0">
                     <div class="form-label pe-3">selected</div>
                     <article class="flex-row bg-light py-2 px-3 rounded-3 gap-2 border flex-wrap">
-                        @foreach ($selected_categories as $key => $item)
-                            <button type="button" class="btn btn-warning p-0 m-0 rounded-pill"
-                                wire:click="removeCategory({{ $key }})">
+                        @foreach ($selected_categories as $item)
+                            <button type="button" class="btn btn-warning p-0 m-0 rounded-pill">
                                 <small class="pe-2 ps-3">{{ $item['name'] }}</small>
                                 <span class="badge bg-danger btn rounded-pill m-0">&times;</span>
                             </button>
                         @endforeach
+                        <template x-for="item in $store.step.selected_categories">
+                            <button type="button" x-on:click='$wire.addCategory(item)'
+                                class="btn btn-warning p-0 m-0 rounded-pill" :key="item.id">
+                                <small class="pe-2 ps-3" x-text="item.name"></small>
+                                <span class="badge bg-danger btn rounded-pill m-0">&times;</span>
+                            </button>
+                        </template>
                     </article>
                 </article>
                 <div class="d-flex gap-2 mt-3 col-12 flex-wrap">
@@ -278,12 +262,13 @@
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
                     <button type="button" class="btn btn-primary"
-                        @click="store.current = store.items[3]">Continue</button>
+                        @click="$store.step.current = $store.step.items[3]">Continue</button>
                 </article>
             </article>
         </article>
         {{-- skills --}}
-        <article x-show="store.current.id === 'skills' " class="col-9 flex-column bg-white p-4 rounded-4">
+        <article x-show=" $store.step.current.id === 'skills' " class="span flex-column bg-white p-4 rounded-4 "
+            style="--span: 9;">
             <div class="fs-2 fw-bold my-6">
                 Skills
             </div>
@@ -291,15 +276,18 @@
             <article class="flex-column gap-1 mt-1">
                 <div class="d-flex flex-column px-3 position-relative">
                     <label for="search-skills" class="form-label">Search skills or add your own</label>
-                    <input type="text" class="form-control" x-on:click="store.skill_open = true"
-                        x-on:click.outside="store.skill_open = false">
-                    <ul :class=" store.skill_open ? 'd-flex' : 'd-none'"
+                    <input type="text" class="form-control" x-on:click="$store.step.skill_open = true"
+                        :value="$store.step.search_skill"
+                        x-on:change="$store.step.search_skill && $store.step.skills.filter(item => item.name == $store.step.search_skill)"
+                        x-on:click.outside="$store.step.skill_open = false">
+                    <ul flex x-show="$store.step.skill_open"
                         class="position-absolute start-0 m-3 list-unstyled bg-white border rounded-4 flex-column overflow-hidden shodow-md"
                         style="top: 60px;z-index: 10;">
-                        @foreach ($skills as $item)
-                            <li type="button" class="dropdown-item" wire:click="addSkill({{ $item }})">
-                                {{ $item->name }}</li>
-                        @endforeach
+                        <template x-for="skill in $store.step.skills">
+                            <li :key="skill.id" class="dropdown-item"
+                                :class="{'d-none': $store.step.skills_selected.includes(skill) }" x-text="skill.name"
+                                @click="$store.step.addToSkillSelected(skill)"></li>
+                        </template>
                     </ul>
                     <span class="fas fa-search position-absolute bottom-0 end-0 w-auto me-3 my-2 pb-1"></span>
                 </div>
@@ -309,75 +297,42 @@
                         <div>selected skills</div>
                         <article>
                             <article class="gap-3 flex-wrap">
-                                @foreach ($selected_skills as $key => $item)
-                                    <button type="button" class="btn btn-primary p-0 m-0 rounded-pill position-relative"
-                                        wire:click="removeSkill({{ $key }})">
-                                        <small class="pe-4 ps-3">{{ $item['name'] }}</small>
-                                        <span class="badge bg-danger rounded-pill m-0 p-0 position-absolute"
-                                            style="width: 26px; height: 26px; font-size: 25px; right:-5px; top: -1px;">&times;</span>
-                                    </button>
-                                @endforeach
-                                {{-- <template x-for="skill in store.skills_selected">
+                                <template x-for="skill in $store.step.skills_selected">
                                     <button :key="skill.id" type="button"
                                         class="btn btn-primary p-0 m-0 rounded-pill position-relative"
-                                        x-on:click="$wire.removeSkill(index)">
+                                        @click="$store.step.removeItem(skill)">
                                         <small x-text="skill.name" class="pe-4 ps-3"></small>
                                         <span class="badge bg-danger rounded-pill m-0 p-0 position-absolute"
                                             style="width: 26px; height: 26px; font-size: 25px; right:-5px; top: -1px;">&times;</span>
                                     </button>
-                                </template> --}}
+                                </template>
                             </article>
                         </article>
                     </article>
                     <article class="flex-column gap-2 col-6 p-3">
                         <div>suggested</div>
-                        <article class="flex-wrap gap-2">
-                            @foreach ($suggested_skills as $key => $item)
-                                <button :key="skill.id" type="button"
-                                    class="btn btn-primary p-0 m-0 rounded-pill position-relative"
-                                    wire:click="removeSkill({{ $key }})">
-                                    <small class="pe-4 ps-3">{{ $item['name'] }}</small>
-                                    <span class="badge bg-danger rounded-pill m-0 p-0 position-absolute"
-                                        style="width: 26px; height: 26px; font-size: 25px; right:-5px; top: -1px;">&plus;</span>
-                                </button>
-                            @endforeach
-                        </article>
-                        {{-- <template x-for="item in store.suggestedSkills">
+                        <template x-for="item in $store.step.suggestedSkills">
                             <article :key="item.id" class="gap-3 flex-wrap">
                                 <button type="button"
                                     class="btn btn-warning pe-2 p-0 m-0 rounded-pill position-relative"
-                                    @click="store.addToSkillSelected(item)">
+                                    @click="$store.step.addToSkillSelected(item)">
                                     <span class="badge bg-danger rounded-pill m-0 p-0 position-absolute"
                                         style="width: 26px; height: 26px; font-size: 25px; left:-5px; top: -1px;">&plus;</span>
                                     <small class="ps-4" x-text="item.name"></small>
                                 </button>
                             </article>
-                        </template> --}}
+                        </template>
                     </article>
                 </article>
                 <article column class="gap-3">
-                    <article class="gap-2 flex-wrap">
-                        {{-- @foreach ($grouped_skills as $key => $items)
-                            <div class="py-2 border-top w-100">{{ $key }}</div>
-                            @foreach ($items as $item)
-                                <button type="button"
-                                    class="btn btn-primary p-0 pe-2 m-0 rounded-pill position-relative"
-                                    wire:click="addSkill({{ $item }})">
-                                    <small class="ps-4">{{ $item->name }}</small>
-                                    <span class="badge bg-danger rounded-pill m-0 p-0 position-absolute"
-                                        style="width: 26px; height: 26px; font-size: 25px; left:-5px; top: -1px;">&plus;</span>
-                                </button>
-                            @endforeach
-                        @endforeach --}}
-                    </article>
-                    <template x-for="(items, index) in store.skills_grouped" :key="index">
+                    <template x-for="(items, index) in $store.step.skills_grouped" :key="index">
                         <article column>
                             <div x-text="index" class="py-2 border-top w-100"></div>
                             <article class="gap-2 flex-wrap">
                                 <template x-for="item in items">
                                     <button type="button"
                                         class="btn btn-primary p-0 pe-2 m-0 rounded-pill position-relative"
-                                        @click="$wire.addSkill(item)">
+                                        @click="$store.step.addToSkillSelected(item)">
                                         <small x-text="item.name" class="ps-4"></small>
                                         <span class="badge bg-danger rounded-pill m-0 p-0 position-absolute"
                                             style="width: 26px; height: 26px; font-size: 25px; left:-5px; top: -1px;">&plus;</span>
@@ -392,13 +347,14 @@
                 <button type="button" class="btn btn-outline-primary">Edit Selected Category</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[4]">Next</button>
+                    <button type="button" class="btn btn-primary"
+                        @click="$store.step.current = $store.step.items[4]">Next</button>
                 </article>
             </article>
 
         </article>
         {{-- budget --}}
-        <article x-show=" store.current.id === 'budget' " class="span flex-column bg-white p-4 rounded-4 "
+        <article x-show=" $store.step.current.id === 'budget' " class="span flex-column bg-white p-4 rounded-4 "
             style="--span: 9;">
             <div class="fs-2 fw-bold my-6">
                 Budget
@@ -418,14 +374,16 @@
                 <button type="button" class="btn btn-outline-primary">Cannot determine the budget yet</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[5]">Next
+                    <button type="button" class="btn btn-primary"
+                        @click="$store.step.current = $store.step.items[5]">Next
                         Scope</button>
                 </article>
             </article>
 
         </article>
         {{-- scope --}}
-        <article x-show="store.current.id === 'scope' " class="span flex-column bg-white p-4 rounded-4 ">
+        <article x-show=" $store.step.current.id === 'scope' " class="span flex-column bg-white p-4 rounded-4 "
+            style="--span: 9;">
             <h2 class="fs-2 fw-bold my-6">
                 scope
             </h2>
@@ -482,7 +440,6 @@
                     <label for="person" class="form-label">size of the freelance team you'd like to work with <i
                             class="fas fa-question-circle text-primary"></i></label>
                     <select name="person" class="form-select w-50" wire:model="form.team_size" id="person">
-                        <option>Select your team size</option>
                         <option value="1">1 person</option>
                         <option value="1-5">1-5 people</option>
                         <option value="5-10">5-10 people</option>
@@ -494,14 +451,16 @@
                 <button type="button" class="btn btn-outline-primary">Cannot determine the budget yet</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[6]">Next: Post
+                    <button type="button" class="btn btn-primary"
+                        @click="$store.step.current = $store.step.items[6]">Next: Post
                         Details</button>
                 </article>
             </article>
 
         </article>
         {{-- post --}}
-        <article x-show=" store.current.id === 'post'" class="span flex-column bg-white p-4 rounded-4 ">
+        <article x-show=" $store.step.current.id === 'post' " class="span flex-column bg-white p-4 rounded-4 "
+            style="--span: 9;">
             <h2 class="fs-2 fw-bold my-6">
                 Details for the post
             </h2>
@@ -521,13 +480,15 @@
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
                     <button type="button" class="btn btn-primary"
-                        @click="store.post_review = true; store.current = null;">Review
+                        @click="$store.step.current = $store.step.items[7]">Review
                         post</button>
                 </article>
             </article>
 
         </article>
-        <article x-show=" store.post_review " class="span flex-column bg-white p-4 rounded-4">
+        {{-- post detail review --}}
+        <article x-show=" $store.step.current.id === 'review' " class="span flex-column bg-white p-4 rounded-4 "
+            style="--span: 9;">
             <h2 class="fs-2 fw-bold my-6">
                 Review & Post
             </h2>
@@ -536,50 +497,52 @@
                     <label for="title" class="form-label mb-0 fw-bold">Title for your project post</label>
                     <input disabled type="text" wire:model="form.title" class="form-control border-0" id="title"
                         name="title">
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </article>
                 <div class="row col-8 btn-icon">
                     <label for="description" class="form-label mb-0 fw-bold">description</label>
                     <input disabled class="form-control border-0" wire:model="form.description" id="description">
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </div>
                 <div class="row col-8 btn-icon">
                     <label for="method" class="form-label mb-0 fw-bold">method</label>
                     <input disabled class="form-control border-0" wire:model="form.method" id="method">
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </div>
                 <div class="row col-8 btn-icon">
                     <label for="timeline-data" class="form-label mb-0 fw-bold">timeline</label>
                     <input disabled class="form-control border-0" wire:model="form.duration" id="timeline-data">
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </div>
                 <div class="row col-8 btn-icon">
                     <label for="category-data" class="form-label mb-0 fw-bold">category</label>
                     <article class="gap-2">
-                        @foreach ($selected_categories as $item)
-                            <button type="button" class="badge btn-primary rounded-pill btn">{{ $item['name'] }}</button>
-                        @endforeach
+                        <template x-for="item in $store.step.selected_categories">
+                            <button type="button" class="badge btn-primary rounded-pill btn" x-text="item.name"
+                                :key="item.id"></button>
+                        </template>
                     </article>
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </div>
                 <div class="row col-8 btn-icon">
                     <label for="skills-data" class="form-label mb-0 fw-bold">skills</label>
                     <article class="gap-2">
-                        @foreach ($selected_skills as $item)
-                            <button type="button" class="badge btn-primary rounded-pill btn">{{ $item['name'] }}</button>
-                        @endforeach
+                        <template x-for="item in $store.step.skills_selected">
+                            <button type="button" class="badge btn-primary rounded-pill btn" x-text="item.name"
+                                :key="item.id"></button>
+                        </template>
                     </article>
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </div>
                 <div class="row col-8 btn-icon">
                     <label for="budget-data" class="form-label mb-0 fw-bold">budget</label>
                     <input disabled class="form-control border-0" wire:model="form.total_budget" id="budget-data">
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </div>
                 <div class="row col-8 btn-icon">
                     <label for="scope-data" class="form-label mb-0 fw-bold">scope</label>
                     <input disabled class="form-control border-0" wire:model="form.scope" id="scope-data">
-                    <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
+                    <span class="fas fa-pencil btn me-3 pb-2"></span>
                 </div>
             </article>
             <article class="justify-content-end mt-auto">
@@ -591,5 +554,7 @@
             </article>
 
         </article>
+
     </form>
+
 </main>

@@ -12,4 +12,12 @@ class Category extends Model
         'name',
         'icon'
     ];
+
+    public function skills(){
+        return $this->hasMany(Skill::class);
+    }
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
 }

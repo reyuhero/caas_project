@@ -3,20 +3,20 @@
     <article class="align-items-center ">
         <div class="px-2 fw-bold fs-2 pe-5">CAAS</div>
         <section class="cols-3 flow-column gap-2">
-            <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></button>
-            <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></button>
-            <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></button>
-            <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="Reports"><i class="fas fa-scroll"></i></button>
-            <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark fs-7 fw-bold"
-                data-bs-toggle="tooltip" data-bs-placement="bottom" title="KDS">KDS</button>
-            <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="Opportunities"><i class="fas fa-briefcase"></i></button>
-            <button class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="Messages"><i class="fas fa-comment-dots"></i></button>
+            <a href="{{ route('freelancer.dashboard') }}" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></a>
+            <a href="{{ route('freelancer.project') }}" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></a>
+            <a href="#" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></a>
+            <a href="#" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Reports"><i class="fas fa-scroll"></i></a>
+            <a href="#" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark fs-7 fw-bold"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="KDS">KDS</a>
+            <a href="#" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Opportunities"><i class="fas fa-briefcase"></i></a>
+            <a href="#" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Messages"><i class="fas fa-comment-dots"></i></a>
         </section>
     </article>
     <article class="gap-2">
@@ -56,8 +56,8 @@
             class="1 border border-secondary px-3 rounded-pill">
         <div class="dropdown" x-data="{ open: false }">
             <button class="btn btn-outline-gray p-0 rounded-pill border-0" @click="open = !open">
-                <img src="/public/images/img.jpg" class=" rounded-pill dropdown-toggle no-content"
-                    style="width: 35px;" />
+                <i class="rounded-pill fas fa-image dropdown-toggle no-content"
+                    style="width: 35px;" ></i>
             </button>
             <div id="profile-dropdown"
                 class="btn rounded-pill overflow-hidden p-0 dropdown-toggle no-content"
@@ -81,7 +81,7 @@
                 <li><a href="#" class="dropdown-item py-2"><i
                             class="fas fa-question-circle me-2 fs-4 text-black-50"></i>Help</a></li>
                 <li><a href="#" class="dropdown-item py-2"><i
-                            class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i><livewire:logout/></a></li>
+                            class="fas fa-sign-out-alt me-2 fs-4 text-black-50"></i><livewire:logout /></a></li>
             </ul>
         </div>
     </article>

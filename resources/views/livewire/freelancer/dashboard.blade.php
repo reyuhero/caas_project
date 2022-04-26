@@ -1,4 +1,7 @@
 @section('title', 'Freelancer Dashboard')
+@section('header')
+    @include('layouts.navigation-freelancer')
+@endsection
 <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
     <!-- container -->
     <div class="z-3">
@@ -12,7 +15,50 @@
                     <a href="#" class="btn fw-bold btn-light shadow-sm px-3 rounded-pill fs-9">View All Projects</a>
                 </article>
                 <section class="flex-row gap-3 flex-wrapper">
-                    <!-- danger project -->
+                    @foreach ($projects as $item)
+                        <article class="position-relative bg-light rounded-3 shadow-sm p-3 bl-danger flex-column span"
+                            style="--span:3">
+                            <i class="fas fa-ellipsis-h text-black-50 position-absolute top-0 end-0 m-2"></i>
+                            <article class="flex-row gap-2 mb-2 align-items-center">
+                                <article class="align-items-center justify-contet-center">
+                                    <div class="bg-success btn-circle text-success"
+                                        style="--size: 40px; --bs-bg-opacity: 0.3">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                </article>
+                                <article class="flex-column">
+                                    <div class="fw-bold fs-8">Product Preview...</div>
+                                    <div class="fs-8 text-black-50">Iconspace Team</div>
+                                </article>
+                            </article>
+
+                            <article class="flex-column pt-1 gap-1 fs-8">
+                                <article class="justify-content-between">
+                                    <div>Remain Milestone</div>
+                                    <b>2</b>
+                                </article>
+                                <article class="justify-content-between gap-3">
+                                    <div>Project Deadline</div>
+                                    <b>6 weeks later</b>
+                                </article>
+                                <article class="justify-content-between gap-3">
+                                    <div>Assigned to me</div>
+                                    <b>2</b>
+                                </article>
+                                <article class="w-100 flex-column align-items-end">
+                                    <b>70%</b>
+                                    <progress id="sss" max="100" class=" w-100" role="progressbar"
+                                        value="80">70%</progress>
+                                </article>
+                                <hr class="my-2 text-black-50">
+                                <article class="align-items-center justify-content-between">
+                                    <div>My Task</div>
+                                    <i class="fas fa-chevron-down text-black-50"></i>
+                                </article>
+                            </article>
+                        </article>
+                    @endforeach
+                    {{-- <!-- danger project -->
                     <article class="position-relative bg-light rounded-3 shadow-sm p-3 bl-danger flex-column span"
                         style="--span:3">
                         <i class="fas fa-ellipsis-h text-black-50 position-absolute top-0 end-0 m-2"></i>
@@ -135,7 +181,6 @@
                             </article>
                         </article>
                     </article>
-
                     <!-- start project -->
                     <article class="position-relative bg-light rounded-3 shadow-sm p-3 bl-primary flex-column span"
                         style="--span:3">
@@ -165,7 +210,7 @@
                                 <div>Project Deadline</div>
                             </article>
                         </article>
-                    </article>
+                    </article> --}}
 
                 </section>
 

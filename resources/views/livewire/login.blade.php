@@ -59,7 +59,7 @@
           <div class="bg-white text-center z-2 px-2 p-0 badge text-black">OR</div>
         </div>
         <div class="d-grid col mx-auto">
-          <a href="#" class="btn btn-light rounded-pill fw-bold py-2 px-3 " type="submit">
+          <a href="#" class="btn btn-light rounded-pill fw-bold py-2 px-3 ">
             <i class="fab fa-google"></i> Log in with Google
           </a>
         </div>
