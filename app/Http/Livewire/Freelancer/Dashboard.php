@@ -10,7 +10,7 @@ class Dashboard extends Component
     public $projects;
     public function mount()
     {
-        $this->projects = Project::all();
+        $this->projects = Project::take(4)->get();
     }
     public function render()
     {

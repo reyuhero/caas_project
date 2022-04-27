@@ -181,7 +181,7 @@
                 <button type="button" class="btn btn-outline-primary">reuse a previous project post</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">cancel</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[1]">next: timeline
+                    <button type="button" class="btn btn-primary" @click="store.current = store.steps[1]">next: timeline
                         & method</button>
                 </article>
             </article>
@@ -238,7 +238,7 @@
                 <button type="button" class="btn btn-outline-primary">reuse a previous project post</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">cancel</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[2]">next:
+                    <button type="button" class="btn btn-primary" @click="store.current = store.steps[2]">next:
                         category</button>
                 </article>
             </article>
@@ -278,7 +278,7 @@
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
                     <button type="button" class="btn btn-primary"
-                        @click="store.current = store.items[3]">Continue</button>
+                        @click="store.current = store.steps[3]">Continue</button>
                 </article>
             </article>
         </article>
@@ -392,7 +392,7 @@
                 <button type="button" class="btn btn-outline-primary">Edit Selected Category</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[4]">Next</button>
+                    <button type="button" class="btn btn-primary" @click="store.current = store.steps[4]">Next</button>
                 </article>
             </article>
 
@@ -418,7 +418,7 @@
                 <button type="button" class="btn btn-outline-primary">Cannot determine the budget yet</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[5]">Next
+                    <button type="button" class="btn btn-primary" @click="store.current = store.steps[5]">Next
                         Scope</button>
                 </article>
             </article>
@@ -494,7 +494,7 @@
                 <button type="button" class="btn btn-outline-primary">Cannot determine the budget yet</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.items[6]">Next: Post
+                    <button type="button" class="btn btn-primary" @click="store.current = store.steps[6]">Next: Post
                         Details</button>
                 </article>
             </article>
