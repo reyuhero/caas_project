@@ -464,8 +464,8 @@
             <article class="justify-content-between mt-auto">
                 <button class="btn btn-outline-primary">Cannot determine the budget yet</button>
                 <article class="gap-3">
-                    <button class="btn btn-ouline-light">back</button>
-                    <button class="btn btn-primary" @click="store.current = store.steps[5]">Next Scope</button>
+                    <button type="button" class="btn btn-ouline-light">back</button>
+                    <button type="button" class="btn btn-primary" @click="store.current = store.steps[5]; store.budget2 = false">Next Scope</button>
                 </article>
             </article>
 

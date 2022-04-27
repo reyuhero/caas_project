@@ -13,6 +13,7 @@ return array(
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Livewire\\Client\\Dashboard' => $baseDir . '/app/Http/Livewire/Client/Dashboard.php',
     'App\\Http\\Livewire\\Freelancer\\Dashboard' => $baseDir . '/app/Http/Livewire/Freelancer/Dashboard.php',
+    'App\\Http\\Livewire\\Freelancer\\Project\\ApplyProcess' => $baseDir . '/app/Http/Livewire/Freelancer/Project/ApplyProcess.php',
     'App\\Http\\Livewire\\Freelancer\\Project\\Create' => $baseDir . '/app/Http/Livewire/Freelancer/Project/Create.php',
     'App\\Http\\Livewire\\Freelancer\\Project\\Index' => $baseDir . '/app/Http/Livewire/Freelancer/Project/Index.php',
     'App\\Http\\Livewire\\Login' => $baseDir . '/app/Http/Livewire/Login.php',

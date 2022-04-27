@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     // ! type client = 0
-    // ! type freelancer = 1 
+    // ! type freelancer = 1
     /**
      * The attributes that are mass assignable.
      *
@@ -53,5 +53,13 @@ class User extends Authenticatable
     }
     public function isFreelancer() {
         return $this->type === 0;
+    }
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class, 'team_user', 'user_id','team_id');
+    }
+    public function team()
+    {
+        return $this->hasOne(Team::class, 'ownership', 'id');
     }
 }

@@ -16,15 +16,17 @@ return new class extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('users_id')->nullable();
+            $table->integer('ownership')->nullable();
             $table->string('logo_url', 2083)->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('payment_verified_members')->nullable();
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * *----- Reverse the migrations. -----*
      *
      * @return void
      */

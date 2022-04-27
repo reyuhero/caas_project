@@ -523,6 +523,7 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\Client\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Client/Dashboard.php',
         'App\\Http\\Livewire\\Freelancer\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Dashboard.php',
+        'App\\Http\\Livewire\\Freelancer\\Project\\ApplyProcess' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Project/ApplyProcess.php',
         'App\\Http\\Livewire\\Freelancer\\Project\\Create' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Project/Create.php',
         'App\\Http\\Livewire\\Freelancer\\Project\\Index' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Project/Index.php',
         'App\\Http\\Livewire\\Login' => __DIR__ . '/../..' . '/app/Http/Livewire/Login.php',

@@ -20,4 +20,8 @@ class Category extends Model
     {
         return $this->belongsToMany(Project::class);
     }
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class);
+    }
 }
