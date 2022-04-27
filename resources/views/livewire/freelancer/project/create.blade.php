@@ -74,6 +74,7 @@
             Alpine.store("data", {
                 skills: @js($skills),
                 skill_open: false,
+                budget2: false,
                 skills_grouped: function() {
                     const data = @json($skills);
                     var grouped = data.reduce((dictionary, p) => {
@@ -398,8 +399,8 @@
 
         </article>
         {{-- budget --}}
-        <article x-show=" store.current.id === 'budget' " class="span flex-column bg-white p-4 rounded-4 "
-            style="--span: 9;">
+        <article x-show="store.current.id === 'budget' && store.budget2 === false"
+            class="flex-column bg-white p-4 rounded-4">
             <div class="fs-2 fw-bold my-6">
                 Budget
             </div>
@@ -418,8 +419,53 @@
                 <button type="button" class="btn btn-outline-primary">Cannot determine the budget yet</button>
                 <article class="gap-3">
                     <button type="button" class="btn btn-ouline-light">back</button>
-                    <button type="button" class="btn btn-primary" @click="store.current = store.steps[5]">Next
-                        Scope</button>
+                    <button type="button" class="btn btn-primary" @click="store.budget2 = true">Next
+                        Scope
+                    </button>
+                </article>
+            </article>
+
+        </article>
+        {{-- budget 2 --}}
+        <article x-show="store.budget2" class="flex-column bg-white p-4 rounded-4">
+            <h2 class="fs-2 fw-bold my-6">
+                Budget
+            </h2>
+            <p class="fs-7">By choosing staff Augumentation, you can integrate the freelance team into your
+                organization and have the options to pay them</p>
+            <article class="flex-column gap-1 mt-1">
+                <div class="row px-3 position-relative col-6">
+                    <label for="budget" class="form-label">Estimated monthly/weekly budget <i
+                            class="fas fa-question-circle text-primary"></i></label>
+                    <input type="text" name="budget" class="form-control px-3" id="budget">
+                    <span class=" position-absolute bottom-0 start-0 w-auto ms-4 my-2">$</span>
+                    <span class=" position-absolute bottom-0 end-0 w-auto me-4 my-2">
+                        monthly 1 ⏷
+                    </span>
+                </div>
+                <div class="row mt-3 col-6">
+                    <label for="duration" class="form-label">duration <i
+                            class="fas fa-question-circle text-primary"></i></label>
+                    <div class="d-flex flex-row col-6 gap-3 align-items-center">
+                        <input type="text" id="duration" class="form-control">
+                        <span>month</span>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div>total budget for the staff Augumentation</div>
+                    <b>$0</b>
+                </div>
+                <article class="fs-7 justify-content-end my-2">
+                    <div class="col-4">
+                        You will be able to choose how many talents you need in the next step.
+                    </div>
+                </article>
+            </article>
+            <article class="justify-content-between mt-auto">
+                <button class="btn btn-outline-primary">Cannot determine the budget yet</button>
+                <article class="gap-3">
+                    <button class="btn btn-ouline-light">back</button>
+                    <button class="btn btn-primary" @click="store.current = store.steps[5]">Next Scope</button>
                 </article>
             </article>
 
@@ -527,6 +573,7 @@
             </article>
 
         </article>
+        {{-- review --}}
         <article x-show=" store.post_review " class="span flex-column bg-white p-4 rounded-4">
             <h2 class="fs-2 fw-bold my-6">
                 Review & Post
@@ -557,7 +604,8 @@
                     <label for="category-data" class="form-label mb-0 fw-bold">category</label>
                     <article class="gap-2">
                         @foreach ($selected_categories as $item)
-                            <button type="button" class="badge btn-primary rounded-pill btn">{{ $item['name'] }}</button>
+                            <button type="button"
+                                class="badge btn-primary rounded-pill btn">{{ $item['name'] }}</button>
                         @endforeach
                     </article>
                     <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
@@ -566,7 +614,8 @@
                     <label for="skills-data" class="form-label mb-0 fw-bold">skills</label>
                     <article class="gap-2">
                         @foreach ($selected_skills as $item)
-                            <button type="button" class="badge btn-primary rounded-pill btn">{{ $item['name'] }}</button>
+                            <button type="button"
+                                class="badge btn-primary rounded-pill btn">{{ $item['name'] }}</button>
                         @endforeach
                     </article>
                     <span class="fas fa-pencil btn me-3 pb-2 d-none"></span>
