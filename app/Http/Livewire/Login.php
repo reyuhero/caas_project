@@ -33,7 +33,6 @@ class Login extends Component
 
         Auth::attempt($this->form);
         $user = Auth::user();
-        dd($user);
         switch($user->type){
             case "freelancer":
                 return redirect(route('freelancer.dashboard'));
