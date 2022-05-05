@@ -15,6 +15,10 @@
         @yield('header')
     </header>
     @yield('content')
+    <footer>
+        @yield('footer')
+    </footer>
+    @yield('scripts')
     @livewireScripts
 </body>
 </html>

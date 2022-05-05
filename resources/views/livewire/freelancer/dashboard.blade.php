@@ -1,7 +1,5 @@
 @section('title', 'Freelancer Dashboard')
-@section('header')
-    @include('layouts.navigation-freelancer')
-@endsection
+
 <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
     <!-- container -->
     <div class="z-3">
@@ -27,7 +25,7 @@
                                     </div>
                                 </article>
                                 <article class="flex-column">
-                                    <div class="fw-bold fs-8">Product Preview...</div>
+                                    <div class="fw-bold fs-8">{{ $item->title }}</div>
                                     <div class="fs-8 text-black-50">Iconspace Team</div>
                                 </article>
                             </article>
@@ -236,10 +234,8 @@
                         </article>
                         <article class="gap-2">
                             <i class="fas fa-user btn-circle bg-danger text-danger" style="--bs-bg-opacity: 0.2;"></i>
-                            <i class="fas fa-user btn-circle bg-success text-success"
-                                style="--bs-bg-opacity: 0.2;"></i>
-                            <i class="fas fa-user btn-circle bg-primary text-primary"
-                                style="--bs-bg-opacity: 0.2;"></i>
+                            <i class="fas fa-user btn-circle bg-success text-success" style="--bs-bg-opacity: 0.2;"></i>
+                            <i class="fas fa-user btn-circle bg-primary text-primary" style="--bs-bg-opacity: 0.2;"></i>
                             <i class="fas fa-user btn-circle bg-danger text-danger" style="--bs-bg-opacity: 0.2;"></i>
                         </article>
                     </article>
@@ -258,10 +254,8 @@
                         </article>
                         <article class="gap-2">
                             <i class="fas fa-user btn-circle bg-danger text-danger" style="--bs-bg-opacity: 0.2;"></i>
-                            <i class="fas fa-user btn-circle bg-success text-success"
-                                style="--bs-bg-opacity: 0.2;"></i>
-                            <i class="fas fa-user btn-circle bg-primary text-primary"
-                                style="--bs-bg-opacity: 0.2;"></i>
+                            <i class="fas fa-user btn-circle bg-success text-success" style="--bs-bg-opacity: 0.2;"></i>
+                            <i class="fas fa-user btn-circle bg-primary text-primary" style="--bs-bg-opacity: 0.2;"></i>
                             <i class="fas fa-user btn-circle bg-danger text-danger" style="--bs-bg-opacity: 0.2;"></i>
                         </article>
                     </article>
@@ -272,8 +266,7 @@
                     <div>KDS headline</div>
                     <canvas id="myChart" width="300" height="200"></canvas>
                 </article>
-                <article class="col bg-white p-4 rounded-4 shadow-sm flex-column gap-3
-          ">
+                <article class="col bg-white p-4 rounded-4 shadow-sm flex-column gap-3">
                     <article class="justify-content-between w-100">
                         <div class="fw-bold">
                             Best march
