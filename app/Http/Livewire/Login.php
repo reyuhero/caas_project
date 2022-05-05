@@ -24,15 +24,16 @@ class Login extends Component
     protected $rules = [
 
         'form.email' => 'required|email',
-        
+
         'form.password' => 'required|min:6',
-    ]; 
+    ];
 
     public function submit(){
         $this->validate();
-        
+
         Auth::attempt($this->form);
         $user = Auth::user();
+        dd($user);
         switch($user->type){
             case "freelancer":
                 return redirect(route('freelancer.dashboard'));
