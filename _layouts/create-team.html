@@ -9,16 +9,15 @@
     <title>Create a team</title>
     <script type="module" src="import.mjs"></script>
     <script type="module" src="public/js/nav-comp.mjs"></script>
-    
+
 </head>
 
 <body class="d-flex flex-column bg-light">
     <nav-comp></nav-comp>
 
-    <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3"> 
+    <main class="d-flex flex-column justify-content-center position-relative mx-3 p-3">
         <!-- container -->
         <article class="z-3">
-
             <article align-center column class="gap-3 col-3">
                 <article align-center class="gap-4 justify-content-between">
                     <article align-center>
@@ -106,7 +105,7 @@
                     <div class="col">
                         <label for="team-name" class="form-label">Team name</label>
                         <input placeholder="E.g. BestDesigners or CodeStudio" class="form-control" type="text" name="team-name" id="team-name">
-                    </div> 
+                    </div>
 
                     <div class="col-auto">
                         <label for="team-profile-url" class="form-label">Your klabo Team profile url: <i class="fas fa-question-circle text-primary ps-2"></i></label>
@@ -115,14 +114,14 @@
 
                     <div class="col">
                         <label for="tagline" class="form-label">
-                            Tagline 
+                            Tagline
                             <i class="fas fa-question-circle text-primary"></i>
                         </label>
                         <input class="form-control" type="text" name="tagline" id="tagline">
                     </div>
 
                     <article class="justify-content-end gap-3">
-                        <button type="button" onclick="openModal('create-team',0)" 
+                        <button type="button" onclick="openModal('create-team',0)"
                             class="btn btn-outline-secondary rounded-pill w-auto">cancel
                         </button>
                         <next-btn type="button" onclick="nextStep('#step-2')"
@@ -219,7 +218,7 @@
                                 </button>
                             </article>
                         </article>
-                    </article> 
+                    </article>
                     <article class="justify-content-between align-items-end">
                         <back-btn type="button" onclick="nextStep('#step-1')" class="btn btn-outline-secondary rounded-pill">  <i class="fas fa-arrow-left"></i> Back</back-btn>
                         <next-btn type="button" onclick="nextStep('#step-3')"
@@ -248,7 +247,7 @@
                 </step-content>
                 <!-- ? 4 step -->
                 <step-content flex column class="p-3 d-none gap-3" id="step-4">
-                    <h4>create your Klabo teams</h4> 
+                    <h4>create your Klabo teams</h4>
                     <div>Add project portfolio for the team (optional) <i class="fas fa-question-circle text-primary"></i></div>
                     <article class="gap-3">
                         <button class="btn btn-success">create a project portfolio <i class="fas fa-plus ms-2"></i></button>
@@ -266,13 +265,13 @@
                                 <article>
                                     <i class="fas fa-user"></i>
                                 </article>
-                            </article> 
+                            </article>
 
                             <article class="position-absolulte bottom-0 end-0 gap-2 mt-auto">
                                 <button class="btn btn-outline-primary rounded-circle"><i class="fas fa-pen"></i></button>
                                 <button class="btn btn-outline-danger rounded-circle"><i class="fas fa-trash"></i></button>
                                 <button class="btn btn-outline-secondary rounded-circle"><i class="fas fa-chevron-right"></i></button>
-                            </article> 
+                            </article>
                         </article>
                         <!-- * end item -->
                         <!-- * item -->
@@ -291,7 +290,7 @@
                                 <button class="btn btn-outline-primary rounded-circle"><i class="fas fa-pen"></i></button>
                                 <button class="btn btn-outline-danger rounded-circle"><i class="fas fa-trash"></i></button>
                                 <button class="btn btn-outline-secondary rounded-circle"><i class="fas fa-chevron-right"></i></button>
-                            </article> 
+                            </article>
                         </article>
                         <!-- * end item -->
                     </article>
@@ -305,7 +304,7 @@
                 </step-content>
                 <!-- ? 5 step -->
                 <step-content flex column class="p-3 d-none gap-3" id="step-5">
-                    <h4>create your Klabo teams</h4> 
+                    <h4>create your Klabo teams</h4>
                     <div>Add service offering (optional) <i class="fas fa-question-circle text-primary"></i></div>
                     <article class="gap-3">
                         <button class="btn btn-success">create a service offering <i class="fas fa-plus ms-2"></i></button>
@@ -334,7 +333,7 @@
                                 <button class="btn btn-outline-primary rounded-circle"><i class="fas fa-pen"></i></button>
                                 <button class="btn btn-outline-danger rounded-circle"><i class="fas fa-trash"></i></button>
                                 <button class="btn btn-outline-secondary rounded-circle"><i class="fas fa-chevron-right"></i></button>
-                            </article> 
+                            </article>
                         </article>
                         <!-- * end item -->
                         <!-- * item -->
@@ -359,7 +358,7 @@
                                 <button class="btn btn-outline-primary rounded-circle"><i class="fas fa-pen"></i></button>
                                 <button class="btn btn-outline-danger rounded-circle"><i class="fas fa-trash"></i></button>
                                 <button class="btn btn-outline-secondary rounded-circle"><i class="fas fa-chevron-right"></i></button>
-                            </article> 
+                            </article>
                         </article>
                         <!-- * end item -->
                     </article>
@@ -374,7 +373,7 @@
                 <!-- ? 6 step -->
                 <step-content flex column class="p-3 d-none gap-3" id="step-6" >
                     <h4>create your Klabo teams</h4>
-                    <div>Invite talents to join your team 
+                    <div>Invite talents to join your team
                         <i class="fas fa-question-circle text-primary tool-tip">
                             <div class="top">
                                 You can work solo for the learn or you can invite and collobrate with other talents!
@@ -472,7 +471,7 @@
                         </article>
 
                     </article>
-                    
+
                     <article class="align-items-center gap-3 align-self-end">
                         <i class="fas fa-question-circle text-primary"></i>
                         <button class="btn btn-primary">Post a Talent Recruitment</button>

@@ -21,7 +21,6 @@ utilities;
         padding: 0;
         box-sizing: border-box;
         font-family: "Montserrat", sans-serif;
-        text-transform: capitalize;
     }
 
     *[flex] {
@@ -46,15 +45,23 @@ utilities;
 }
 
 @layer components {
-
+    .square {
+        --size: 120px;
+        width: var(--size);
+        height: var(--size);
+    }
     a.link {
         color: var(--bs-dark);
     }
-
+    .contain {
+        object-fit: contain;
+    }
     a.link:hover {
         color: var(--bs-white)
     }
-
+    .pointer {
+        cursor: pointer;
+    }
     .text-dark {
         --bs-text-opacity: 1;
         color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;

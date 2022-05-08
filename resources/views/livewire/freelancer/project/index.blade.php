@@ -116,7 +116,7 @@
                                                         class="fas fa-users fs-4 bg-primary background-clip bg-gradient"></i>
                                                 </article>
                                                 <b>{{ $item->name }}</b>
-                                                <div>{{ $item->category->name }}</div>
+                                                <div>{{ $item->category->name ?? ''}}</div>
                                                 <div>Skills</div>
                                             </article>
                                             <article class="gap-3 small">

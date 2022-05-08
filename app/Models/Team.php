@@ -11,10 +11,11 @@ class Team extends Model
     protected $fillable = [
         'name',
         'logo_url',
+        'url',
+        'tagline',
         'description',
         'project_completed',
         'ownership',
-        'category_id',
         'payment_verified_members',
     ];
     public function skills()
@@ -29,9 +30,9 @@ class Team extends Model
     {
         return $this->belongsTo(User::class, 'id', 'ownership');
     }
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class);
     }
     public function logoUrl()
     {

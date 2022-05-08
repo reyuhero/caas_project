@@ -82,6 +82,6 @@ class Create extends Component
     }
     public function render()
     {
-        return view('livewire.freelancer.project.create')->extends('layouts.master')->section('content');
+        return view('livewire.freelancer.project.create')->extends('layouts.freelancer')->section('content');
     }
 }

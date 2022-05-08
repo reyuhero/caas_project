@@ -1,8 +1,5 @@
 @section('title', 'create project')
 
-@section('header')
-    @include('layouts.navigation-freelancer')
-@endsection
 <main class="container">
     <style>
         aside>* {
