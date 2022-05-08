@@ -11,7 +11,7 @@ use Livewire\WithFileUploads;
 class Create extends Component
 {
     use WithFileUploads;
-
+    // form
     public $form = [
         'title',
         'description',
