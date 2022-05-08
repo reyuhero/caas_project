@@ -21,13 +21,15 @@ Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Livewire'], func
         'namespace' => 'Freelancer',
         'prefix' => 'freelancer'
     ],function(){
-        Route::get("/dashboard", Dashboard::class)->name('freelancer.dashboard');
+        Route::get("/dashboard", \Dashboard::class)->name('freelancer.dashboard');
         Route::get("/project/create", \Project\Create::class)->name('freelancer.create.project');
         Route::get("/project", \Project\Index::class)->name('freelancer.project');
         Route::get("/team", \Team\Index::class)->name('freelancer.team');
         Route::get("/team/create", \Team\Create::class)->name('freelancer.team.create');
+
         // ! portfilio
         Route::get("/portfolio/create", \Portfolio\Create::class)->name('freelancer.portfolio.create');
+
         // ! service offering
         Route::get("/serviceoffering/create", \ServiceOffering\Create::class)->name('freelancer.serviceoffering.create');
     });
