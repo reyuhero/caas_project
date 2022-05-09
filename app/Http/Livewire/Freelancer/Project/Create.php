@@ -72,13 +72,13 @@ class Create extends Component
         if(!in_array($item, $this->selected_skills))
             return array_unshift($this->selected_skills, $item);
     }
-    public function removeCategory($key)
-    {
-        unset($this->selected_categories[$key]);
-    }
     public function removeSkill($key)
     {
         unset($this->selected_skills[$key]);
+    }
+    public function removeCategory($key)
+    {
+        unset($this->selected_categories[$key]);
     }
     public function render()
     {

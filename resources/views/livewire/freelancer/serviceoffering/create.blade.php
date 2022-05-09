@@ -108,8 +108,8 @@
             <h6>select team members involved.</h6>
             <article class="gap-2 flex-wrap">
                 @foreach ($members as $item)
-                    <article class="rounded-3 p-2 gap-2 bg-white position-relative square pointer" style="--size: 80px">
-                        <label for="user-{{ $item->id }}" class="text-center gap-2 d-flex flex-column align-items-center">
+                    <article class="rounded-3 border border-2 gap-2 bg-white position-relative square pointer" style="--size: 80px">
+                        <label  type='button'  for="user-{{ $item->id }}" class="text-center gap-2 d-flex flex-column align-items-center">
                             <div class="btn-circle"><i class="fas m-auto fa-user  bg-light rounded-pill border-dark border-2 p-3"></i></div>
                             <div class="fs-8">{{ $item->name }}</div>
                         </label>

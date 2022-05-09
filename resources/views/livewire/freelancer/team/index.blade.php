@@ -14,7 +14,10 @@
         create project portfolio
     </a>
     <a href="{{ route('freelancer.serviceoffering.create') }}" class="btn btn-primary">
-        create project portfolio
+        create service offering
+    </a>
+    <a href="{{ route('freelancer.talentrecruitment.create') }}" class="btn btn-primary">
+        create talent recruitment
     </a>
     <dialog :class="{'d-block' : open}" class="position-fixed top-0 end-0 start-0 h-100 w-100 shadow-md z-1">
         <livewire:freelancer.team.create>

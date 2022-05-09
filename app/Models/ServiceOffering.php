@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceOffering extends Model
 {
     use HasFactory;
-    public $cast = [
+    protected $casts = [
         'links' => 'array',
         'members' => 'array',
         'photos' => 'array'
     ];
-    public $fillable = [
+    protected $fillable = [
         'title',
         'description',
         'links',

@@ -30,6 +30,7 @@ class Create extends Component
     {
         $this->members = User::all();
         $this->categories = Category::all();
+
     }
     public function submit()
     {
