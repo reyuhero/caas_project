@@ -5,9 +5,10 @@ namespace App\Http\Livewire\Freelancer\Team;
 use App\Models\Category;
 use App\Models\Team;
 use Livewire\Component;
-
+use Livewire\WithFileUploads;
 class Create extends Component
 {
+    use WithFileUploads;
     public $form = [
         'name' => '',
         'url' => '',
@@ -15,6 +16,7 @@ class Create extends Component
         'description' => '',
         'service_offering' => ''
     ];
+    public $logo = '';
     public $categories = [];
     public $selected_categories = [];
     public $selected_user = [];

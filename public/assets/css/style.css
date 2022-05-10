@@ -50,6 +50,13 @@ utilities;
         width: var(--size);
         height: var(--size);
     }
+    .icon-fa {
+        --s: 1.2rem;
+        width: var(--s);
+        height: var(--s);
+        display: grid;
+        place-items: center;
+    }
     a.link {
         color: var(--bs-dark);
     }

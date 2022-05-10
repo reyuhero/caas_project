@@ -14,7 +14,9 @@
     <header>
         @yield('header')
     </header>
-    @yield('content')
+    <main class="d-grid">
+        @yield('content')
+    </main>
     <footer>
         @yield('footer')
     </footer>

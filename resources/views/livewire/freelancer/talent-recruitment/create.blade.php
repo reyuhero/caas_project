@@ -1,6 +1,5 @@
 @section('title', 'Create Talent Recruitment')
 
-
 <main class="container py-3" x-data="{ current: 1 , skills_grouped: @js($grouped_skills), open: false}">
     <h4>Create A Talent Recruitment Post</h4>
     <form wire:submit.prevent="submit" class="d-flex flex-column">

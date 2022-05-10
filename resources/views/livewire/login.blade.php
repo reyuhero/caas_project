@@ -5,7 +5,7 @@
         <div class="ps-3">CAAS</div>
     </nav>
 @endsection
-  <main class="d-flex flex-column justify-content-center position-relative m-3 px-md-5">
+  <main class="d-flex flex-column mx-auto justify-content-center position-relative m-3 px-md-5">
     @if(session()->has('message'))
         <div class="alert alert-danger">
             {{ session()->get('message') }}
