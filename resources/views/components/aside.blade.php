@@ -33,7 +33,7 @@
 
     <x-aside-link name="My Milestones & tasks" href="{{ route('freelancer.dashboard') }}" icon="fas fa-clipboard-check"/>
 
-    <x-aside-link name="Team Management" class="pointer-events-none" icon="fas fa-users">
+    <x-aside-link name="Team Management" href="#" class="pointer-events-none" icon="fas fa-users">
         <a href="#">Team Information</a>
         <a href="#">Goals</a>
         <a href="#">Service offering</a>
