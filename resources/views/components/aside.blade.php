@@ -1,6 +1,6 @@
 <aside class="col-3 d-flex flex-column gap-2 py-3 ps-3">
 
-    <x-aside-link name="Team name" icon="fab fa-adn" class="pointer-events-none">
+    <x-aside-link name="Team name" href="#" icon="fab fa-adn" class="pointer-events-none">
         <a href="#">Created By You:</a>
         <ul class="bg-light p-0 m-0">
             <li class="align-items-center d-flex py-0"><a class="w-100 ps-4" href="#">team title</a></li>
@@ -62,7 +62,7 @@
             <a href="#" class="btn btn-primary">Discover project</a>
     </x-aside-link>
 
-    <x-aside-link name="Appliances" class="pointer-events-none" icon="fas fa-users">
+    <x-aside-link name="Appliances" href="#" class="pointer-events-none" icon="fas fa-users">
         <a href="#">Issues Management</a>
             <a href="#">LucidChart</a>
             <a href="#">Klabo Center</a>
