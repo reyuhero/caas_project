@@ -13,25 +13,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->integer('ownership')->nullable();
-            $table->bigInteger('logo')->nullable();
+            $table->string('location')->nullable();
             $table->text('description')->nullable();
-            $table->integer('category_id')->nullable();
-            $table->integer('payment_verified_members')->nullable();
+            $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('avatar_id')->nullable();
             $table->timestamps();
         });
     }
 
     /**
-     * *----- Reverse the migrations. -----*
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('profiles');
     }
 };

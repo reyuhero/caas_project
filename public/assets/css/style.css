@@ -50,6 +50,9 @@ utilities;
         width: var(--size);
         height: var(--size);
     }
+    .pointer-events-none > summary > * {
+        pointer-events: none;
+    }
     .icon-fa {
         --s: 1.2rem;
         width: var(--s);
@@ -85,7 +88,9 @@ utilities;
         position: relative;
         z-index: 999999999 !important;
     }
-
+    .ul > li:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+    }
     a[no-deco] {
         text-decoration: none;
     }

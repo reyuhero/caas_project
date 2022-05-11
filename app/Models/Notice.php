@@ -5,22 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Portfolio extends Model
+class Notice extends Model
 {
     use HasFactory;
-    protected $casts = [
-        'links' => 'array',
-        'photos' => 'array'
-    ];
-
     protected $fillable = [
         'title',
         'description',
-        'links',
         'type',
-        'team_id',
-        'photos',
+        'member_id',
+        'team_id'
     ];
+    public function member()
+    {
+        return $this->belongsTo(Member::class);
+    }
     public function team()
     {
         return $this->belongsTo(Team::class);

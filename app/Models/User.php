@@ -21,8 +21,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'type',
+        'avatar_id',
         'email',
         'password',
+        'user_id',
     ];
 
     /**
@@ -60,6 +62,23 @@ class User extends Authenticatable
     }
     public function team()
     {
-        return $this->hasOne(Team::class, 'ownership', 'id');
+        return $this->hasOne(Team::class, 'ownership_id');
     }
+    public function roles()
+    {
+        return $this->hasMany(Role::class);
+    }
+    public function members()
+    {
+        return $this->hasMany(Member::class);
+    }
+    public function avatar()
+    {
+        return $this->belongsTo(File::class, 'avatar_id');
+    }
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
+
 }

@@ -1,17 +1,14 @@
 <aside class="col-3 d-flex flex-column gap-2 py-3 ps-3">
 
     <x-aside-link name="Team name" icon="fab fa-adn" class="pointer-events-none">
-        {{-- list team by owner --}}
         <a href="#">Created By You:</a>
         <ul class="bg-light p-0 m-0">
             <li class="align-items-center d-flex py-0"><a class="w-100 ps-4" href="#">team title</a></li>
         </ul>
-        {{-- list team by manager --}}
         <a href="#">Managed By You:</a>
         <ul class="bg-light p-0 m-0">
             <li class="align-items-center d-flex py-0"><a class="w-100 ps-4" href="#">team title</a></li>
         </ul>
-        {{-- list team that you are member of it --}}
         <a href="#">You are member of:</a>
         <ul class="bg-light p-0 m-0">
             <li class="align-items-center d-flex py-0"><a class="w-100 ps-4" href="#">team title</a></li>
@@ -25,11 +22,17 @@
             <button class="btn btn-primary"><i class="fas fa-plus"></i> Create Team</button>
         </article>
     </x-aside-link>
+
     <x-aside-link name="Message & files" href="{{ route('freelancer.dashboard') }}" icon="fas fa-comments"/>
+
     <x-aside-link name="Schedule management" href="{{ route('freelancer.dashboard') }}" icon="fas fa-calendar-day"/>
-    <x-aside-link name="Notice" href="{{ route('freelancer.notice','1') }}" icon="fas fa-note-sticky"/>
-    <x-aside-link name="Members" href="{{ route('freelancer.dashboard') }}" icon="fas fa-users-rectangle"/>
+
+    <x-aside-link name="Notices" href="{{ route('freelancer.notice', $teamId) }}" icon="fas fa-note-sticky"/>
+
+    <x-aside-link name="Members" href="{{ route('freelancer.member', $teamId) }}" icon="fas fa-users-rectangle"/>
+
     <x-aside-link name="My Milestones & tasks" href="{{ route('freelancer.dashboard') }}" icon="fas fa-clipboard-check"/>
+
     <x-aside-link name="Team Management" class="pointer-events-none" icon="fas fa-users">
         <a href="#">Team Information</a>
         <a href="#">Goals</a>
@@ -38,6 +41,7 @@
         <a href="#">Team Reports</a>
         <a href="#">Invite Talents</a>
     </x-aside-link>
+
     <x-aside-link name="Project" href="#" class="pointer-events-none" icon="fab fa-product-hunt">
         <a href="#">Ongoing Project</a>
             <ul class="bg-light p-0 m-0">
@@ -57,6 +61,7 @@
             <a href="#">All participated projects</a>
             <a href="#" class="btn btn-primary">Discover project</a>
     </x-aside-link>
+
     <x-aside-link name="Appliances" class="pointer-events-none" icon="fas fa-users">
         <a href="#">Issues Management</a>
             <a href="#">LucidChart</a>
@@ -64,6 +69,7 @@
             <a href="#">KDS</a>
             <a href="#">Guidebooks</a>
     </x-aside-link>
+
     <article class="py-3 align-items-center">
         <span class="fs-8">Online Members:</span>
         <article class="gap-2 px-2">
@@ -75,8 +81,3 @@
         </article>
     </article>
 </aside>
-@push('scripts')
-<script>
-
-</script>
-@endpush

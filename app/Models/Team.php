@@ -4,18 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Team extends Model
 {
     use HasFactory;
     protected $fillable = [
         'name',
-        'logo_url',
+        'logo_id',
+        'banner_id',
         'url',
         'tagline',
         'description',
         'project_completed',
-        'ownership',
+        'ownership_id',
         'payment_verified_members',
     ];
     public function skills()
@@ -28,18 +30,38 @@ class Team extends Model
     }
     public function ownership()
     {
-        return $this->belongsTo(User::class, 'id', 'ownership');
+        return $this->belongsTo(User::class, 'ownership_id');
     }
     public function categories()
     {
         return $this->belongsToMany(Category::class);
     }
+    public function logo()
+    {
+        return $this->belongsTo(File::class, 'logo_id');
+    }
     public function logoUrl()
     {
-        return $this->hasOne(File::class);
+        return Storage::disk('images')->url($this->logo->location);
+    }
+    public function banner()
+    {
+        return $this->belongsTo(File::class, 'banner_id');
     }
     public function projects()
     {
         return $this->belongsToMany(Project::class);
+    }
+    public function members()
+    {
+        return $this->hasMany(Member::class);
+    }
+    public function notices()
+    {
+        return $this->hasMany(Notice::class);
+    }
+    public function portfolios()
+    {
+        return $this->hasMany(Portfolio::class);
     }
 }

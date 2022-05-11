@@ -6,10 +6,18 @@
                 <h4>create your teams</h4>
                 <article class="justify-content-between">
                     <article align-center class="col-3 flex-column gap-2 me-3">
-                        <button type="button" class="btn btn-circle bg-light p-4 shadow-sm">
-                            <i class="fas fa-image fs-5"></i>
-                        </button>
+                        <input
+                            type="file"
+                            class="form-control"
+                            x-on:change="let ff = fileName($event);  $wire.getFile(ff); "
+                            accept=".jpg, .jpeg, .png"
+                            multiple
+                            wire:model="logo">
                         <div>upload team logo</div>
+                        @if($file)
+                        {{ $file['name'] }}
+
+                        @endif
                     </article>
                     <article class="justify-content-end ms-auto flex-column">
                         <div><small class="fs-9">Or one-click Creation </small><i
