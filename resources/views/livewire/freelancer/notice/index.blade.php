@@ -1,6 +1,6 @@
 @section('title', 'Team Notices')
 <section class="d-flex gap-3 py-3" x-data="{ open: false }">
-    <x-aside team-id="{{ $team_id }}" />
+    <x-aside team-id="{{ $teamId }}" />
     <article class="flex-column col">
         <div class="mx-auto">
             <div class="btn-group" role="group">
@@ -35,6 +35,6 @@
         </ul>
     </article>
     <dialog :class="{ 'd-block': open }" class="position-fixed top-0 end-0 start-0 h-100 w-100 shadow-md z-1">
-        <livewire:freelancer.notice.create team-id="{{ $team_id }}" member-id="9">
+        <livewire:freelancer.notice.create team-id="{{ $teamId }}" member-id="9">
     </dialog>
 </section>
