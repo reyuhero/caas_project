@@ -7,10 +7,11 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public $teams;
-    public function mount()
+    public $team, $teamId;
+    public function mount($teamId)
     {
-        $this->teams = Team::all();
+        $this->teamId = $teamId;
+        $this->team = Team::findOrFail($teamId);
     }
     public function render()
     {

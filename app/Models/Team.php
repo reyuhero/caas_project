@@ -13,6 +13,8 @@ class Team extends Model
         'name',
         'logo_id',
         'banner_id',
+        'profile_id',
+        'badge_id',
         'url',
         'tagline',
         'description',
@@ -48,6 +50,10 @@ class Team extends Model
     {
         return $this->belongsTo(File::class, 'banner_id');
     }
+    public function bannerUrl()
+    {
+        return Storage::disk('images')->url($this->banner->location);
+    }
     public function projects()
     {
         return $this->belongsToMany(Project::class);
@@ -60,8 +66,12 @@ class Team extends Model
     {
         return $this->hasMany(Notice::class);
     }
-    public function portfolios()
+    public function profile()
     {
-        return $this->hasMany(Portfolio::class);
+        return $this->belongsTo(Profile::class);
+    }
+    public function badge()
+    {
+        return $this->belongsTo(Badge::class);
     }
 }

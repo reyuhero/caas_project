@@ -21,8 +21,8 @@ class Create extends Component
     public function submit()
     {
         $notice = Notice::create($this->form);
-        $notice->teamId = intVal($this->teamId);
-        $notice->memberId = intVal($this->memberId);
+        $notice->team_id = intVal($this->teamId);
+        $notice->member_id = intVal($this->memberId);
         $notice->save();
         return redirect()->route('freelancer.notice',$this->teamId);
     }

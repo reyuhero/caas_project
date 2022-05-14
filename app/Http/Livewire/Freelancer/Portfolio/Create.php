@@ -38,7 +38,7 @@ class Create extends Component
         $portfolio->photos = $this->photos;
         $portfolio->members = $this->selected_members;
         $portfolio->save();
-        return redirect()->route('freelancer.team');
+        return redirect()->route('freelancer.teams');
     }
     public function removeLink($item)
     {

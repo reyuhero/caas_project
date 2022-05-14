@@ -13,7 +13,7 @@ class Index extends Component
     public function mount($teamId)
     {
         $this->teamId = $teamId;
-        $this->notices = Notice::all();
+        $this->notices = Notice::where('team_id', $teamId)->get();
     }
     public function delete($id)
     {

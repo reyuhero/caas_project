@@ -7,7 +7,7 @@
                 data-bs-placement="bottom" title="Dashboard"><i class="fas fa-house-user"></i></a>
             <a href="{{ route('freelancer.project') }}" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
                 data-bs-placement="bottom" title="Projects"><i class="fas fa-file-invoice"></i></a>
-            <a href="{{ route('freelancer.team') }}" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
+            <a href="{{ route('freelancer.teams') }}" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
                 data-bs-placement="bottom" title="Team"><i class="fas fa-users"></i></a>
             <a href="#" class="btn btn-circle btn-outline-gray rounded-pill border-0 text-dark" data-bs-toggle="tooltip"
                 data-bs-placement="bottom" title="Reports"><i class="fas fa-scroll"></i></a>

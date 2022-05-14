@@ -18,7 +18,9 @@ class Create extends Component
         'description' => '',
         'service_offering' => ''
     ];
-    public $logo, $file;
+    public $logo = null;
+    public $file, $bannerFile;
+    public $banner = null;
     public $categories = [];
     public $selected_categories = [];
     public $selected_user = [];
@@ -27,28 +29,44 @@ class Create extends Component
 
     public function submit()
     {
-        $categories_ids = array_map( function($item) {
-            return $item['id'];
-        }, $this->selected_categories);
         $this->validate([
-            'logo.*' => 'image|max:1024', // 1MB Max
+            'logo.*' => 'image|mimes:png,jpeg,jpg:max:1024', // 1MB Max
+            'banner.*' => 'image|mimes:png,jpeg'
         ]);
         foreach ($this->logo as $key => $logo) {
             $this->logo[$key] = $logo->store('images');
         }
-        $logo_url = reset($this->logo);
+        foreach ($this->banner as $key => $banner) {
+            $this->banner[$key] = $banner->store('images');
+        }
+        $userID = auth()->user()->id;
+        $categories_ids = array_map( function($item) {
+            return $item['id'];
+        }, $this->selected_categories);
+
+
+        $bannerF = File::create();
+        $bannerF->name = $this->bannerFile['name'];
+        $bannerF->size = $this->bannerFile['size'];
+        $bannerF->mime = $this->bannerFile['ext'];
+        $bannerF->location = reset($this->banner);
+        $bannerF->save();
+
         $file = File::create();
         $file->name = $this->file['name'];
         $file->size = $this->file['size'];
         $file->mime = $this->file['ext'];
-        $file->location = $logo_url;
+        $file->location = reset($this->logo);
         $file->save();
 
         $team = Team::create($this->form);
         $team->categories()->attach($categories_ids);
         $team->logo_id = $file->id;
+        $team->banner_id = $bannerF->id;
+        $team->ownership_id = $userID;
         $team->save();
-        return redirect()->route('freelancer.team');
+
+        return redirect()->route('freelancer.teams');
     }
     public function mount()
     {
@@ -63,11 +81,19 @@ class Create extends Component
     {
         unset($this->selected_categories[$key]);
     }
+
     public function getFile($file)
     {
         $this->file['name'] = $file['name'];
         $this->file['size'] = $file['size'];
         $this->file['ext'] = $file['ext'];
+    }
+
+    public function getBanner($file)
+    {
+        $this->bannerFile['name'] = $file['name'];
+        $this->bannerFile['size'] = $file['size'];
+        $this->bannerFile['ext'] = $file['ext'];
     }
     public function render()
     {

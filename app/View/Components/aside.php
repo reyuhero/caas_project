@@ -2,12 +2,14 @@
 
 namespace App\View\Components;
 
+use App\Models\Team;
 use Illuminate\View\Component;
 
 class aside extends Component
 {
 
     public $teamId;
+    public $team;
     /**
      * Create a new component instance.
      *
@@ -16,6 +18,9 @@ class aside extends Component
     public function __construct($teamId)
     {
         $this->teamId = $teamId;
+        $this->team = Team::findOrFail($teamId);
+
+
     }
 
     /**

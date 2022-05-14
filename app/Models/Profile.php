@@ -23,4 +23,9 @@ class Profile extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    public function teams()
+    {
+        return $this->hasMany(Team::class);
+    }
 }

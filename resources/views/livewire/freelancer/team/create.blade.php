@@ -5,19 +5,21 @@
             <step-content hidden class="p-3 gap-3 flex-column" :class="current === 1 && 'd-flex'" id="step-1">
                 <h4>create your teams</h4>
                 <article class="justify-content-between">
-                    <article align-center class="col-3 flex-column gap-2 me-3">
+                    <article
+                        style="background-image: url({{ $logo ? $logo[0]->temporaryUrl() : null }}); background-size: contain; background-position: center; background-repeat: no-repeat;"
+                        align-center class="flex-column rounded-3 overflow-hidden gap-2 me-3 square position-relative {{ !$logo ? 'image' : '' }}">
                         <input
+                            hidden
+                            multiple
                             type="file"
-                            class="form-control"
                             x-on:change="let ff = fileName($event);  $wire.getFile(ff); "
                             accept=".jpg, .jpeg, .png"
-                            multiple
-                            wire:model="logo">
-                        <div>upload team logo</div>
-                        @if($file)
-                        {{ $file['name'] }}
-
-                        @endif
+                            id="logo"
+                            wire:model.lazy="logo"/>
+                        <label for="logo" class="align-items-center d-flex h-100 justify-content-center pointer text-dark w-100 z-1 bg-dark p-1 text-center" style="--bs-bg-opacity: 0.2">
+                            upload team logo
+                            <div wire:loading wire:target="logo">Uploading...</div>
+                        </label>
                     </article>
                     <article class="justify-content-end ms-auto flex-column">
                         <div><small class="fs-9">Or one-click Creation </small><i
@@ -36,7 +38,7 @@
                     <label for="team-profile-url" class="form-label">Your  Team profile url: <i
                             class="fas fa-question-circle text-primary ps-2"></i></label>
                     <div class="d-flex flex-row gap-3 col align-items-center"> caas.io/
-                        <input type="text" wire:model="form.url"
+                        <input type="text" wire:model.lazy="form.url"
                             name="team-profile-url" class="form-control" id="team-profile-url"></div>
                 </div>
 
@@ -45,7 +47,7 @@
                         Tagline
                         <i class="fas fa-question-circle text-primary"></i>
                     </label>
-                    <input wire:model="form.tagline" class="form-control" type="text" name="tagline" id="tagline">
+                    <input wire:model.lazy="form.tagline" class="form-control" type="text" name="tagline" id="tagline">
                 </div>
 
                 <article class="justify-content-end gap-3">
@@ -108,14 +110,30 @@
             <!-- ? 3 step -->
             <step-content hidden class="p-3 gap-3 flex-column" :class="current === 3 && 'd-flex'" id="step-3">
                 <h4>create your Klabo teams</h4>
-
                 <p>Upload team banner (optional) <i class="fas fa-question-circle text-primary"></i></p>
-                <article class="bg-light w-100 p-3 justify-content-center" align-center>
-                    <h5 class="my-3">Team banner picture upload</h5>
+                @php
+                    $bannerImage = $banner ? reset($banner) : null;
+                @endphp
+                <article
+                    style="background-image: url({{ $bannerImage ? $bannerImage->temporaryUrl() : '' }}); background-size: cover; background-position: center; height: 160px"
+                    class="bg-light w-100 justify-content-center {{ !$banner ? 'image' : '' }}" align-center>
+                    <input
+                    x-on:change="let ff = fileName($event);  $wire.getBanner(ff);"
+                    multiple
+                    hidden
+                    type="file"
+                    accept=".jpg, .jpeg, .png"
+                    wire:model="banner"
+                    name="banner"
+                    id="banner">
+                    <label for="banner" class="align-items-center d-flex h-100 justify-content-center pointer text-dark w-100 z-1 bg-dark" style="--bs-bg-opacity: 0.2">
+                        <h5 class="my-3" >Team banner picture upload</h5>
+                    </label>
+                    <div wire:loading wire:target="photo">Uploading...</div>
                 </article>
                 <article column>
                     <label for="description" class="form-label">description (optional)</label>
-                    <textarea wire:model="form.description" class="form-control" id="description" rows="3"
+                    <textarea wire:model.lazy="form.description" class="form-control" id="description" rows="3"
                         placeholder="why should other talents join the team? why should clients hire the teams?"></textarea>
                 </article>
                 <article class="justify-content-between align-items-end">

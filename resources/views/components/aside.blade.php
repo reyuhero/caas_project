@@ -1,6 +1,6 @@
 <aside class="col-3 d-flex flex-column gap-2 py-3 ps-3">
 
-    <x-aside-link name="Team name" href="#" icon="fab fa-adn" class="pointer-events-none">
+    <x-aside-link name="{{ $team->name }}" href="#" icon="fab fa-adn" class="pointer-events-none">
         <a href="#">Created By You:</a>
         <ul class="bg-light p-0 m-0">
             <li class="align-items-center d-flex py-0"><a class="w-100 ps-4" href="#">team title</a></li>
@@ -34,7 +34,7 @@
     <x-aside-link name="My Milestones & tasks" href="{{ route('freelancer.dashboard') }}" icon="fas fa-clipboard-check"/>
 
     <x-aside-link name="Team Management" href="#" class="pointer-events-none" icon="fas fa-users">
-        <a href="#">Team Information</a>
+        <a href="#">Team Profile</a>
         <a href="#">Goals</a>
         <a href="#">Service offering</a>
         <a href="#">Talent Recruitment</a>

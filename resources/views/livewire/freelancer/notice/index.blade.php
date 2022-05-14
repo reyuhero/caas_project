@@ -1,6 +1,6 @@
 @section('title', 'Team Notices')
 <section class="d-flex gap-3 py-3" x-data="{ open: false }">
-    <x-aside team-id="{{ $teamId }}" />
+    <x-aside team-id="{{ $teamId }}" member-id="9" />
     <article class="flex-column col">
         <div class="mx-auto">
             <div class="btn-group" role="group">
@@ -23,7 +23,7 @@
                         <div>{{ $notice->member->user->name }}</div>
                     </article>
                     <div>
-                        <span><i class="fas fa-clock"></i> 10 min ago</span>
+                        <span><i class="fas fa-clock"></i> {{ $notice->created_at->diffForHumans() }}</span>
                     </div>
                 </div>
                 <div class="position-absolute top-0 end-0 m-3 d-flex gap-2">

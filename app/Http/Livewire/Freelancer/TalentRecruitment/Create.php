@@ -18,17 +18,20 @@ class Create extends Component
     public $categories = [];
     public $selected_categories = [];
 
+    public $teamId;
+
     public $skills = [];
     public $selected_skills = [];
     public $grouped_skills = [];
 
-    public function mount()
+    public function mount($teamId)
     {
         $this->categories = Category::all();
         $this->skills = Skill::all();
         $this->grouped_skills = Skill::select(['name','id','category_id'])->with('category:id,name')->get()->mapToGroups(function($item, $key){
             return [$item->category->name => $item];
         });
+        $this->teamId = $teamId;
     }
     public function submit()
     {

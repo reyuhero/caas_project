@@ -19,6 +19,7 @@ class Create extends Component
         'timeline',
     ];
     public $categories = [];
+    public $teamId;
     public $selected_categories = [];
     public $photos = [];
     public $photo = '';
@@ -26,10 +27,11 @@ class Create extends Component
     public $links = [];
     public $members = [];
     public $selected_members = [];
-    public function mount()
+    public function mount($teamId)
     {
         $this->members = User::all();
         $this->categories = Category::all();
+        $this->teamId = $teamId;
 
     }
     public function submit()
@@ -50,7 +52,7 @@ class Create extends Component
         $serviceOffering->photos = $this->photos;
         $serviceOffering->members = $this->selected_members;
         $serviceOffering->save();
-        return redirect()->route('freelancer.team');
+        return redirect()->route('freelancer.team',);
     }
     public function addToCategories($item)
     {

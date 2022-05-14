@@ -7,6 +7,7 @@ utilities;
 @import url("../../fonts/css/all.min.css") layer(utilities);
 
 :root {
+    --b: #337ab7;
     --brand: #ffc107;
     --brand-light-shadow: #ffc10771;
     --gray-light: #e0e0e0;
@@ -50,9 +51,11 @@ utilities;
         width: var(--size);
         height: var(--size);
     }
-    .pointer-events-none > summary > * {
+
+    .pointer-events-none>summary>* {
         pointer-events: none;
     }
+
     .icon-fa {
         --s: 1.2rem;
         width: var(--s);
@@ -60,18 +63,58 @@ utilities;
         display: grid;
         place-items: center;
     }
+
     a.link {
         color: var(--bs-dark);
     }
+
     .contain {
         object-fit: contain;
     }
+
     a.link:hover {
         color: var(--bs-white)
     }
+    .pentagon {
+        background: var(--b);
+        width: 157.5px;
+        height: 150px;
+        clip-path: polygon( 50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+        position: absolute;
+        transform: scale(0.35);
+        box-sizing: content-box;
+        z-index: 0;
+    }
+    .capitalize , .capitalize * {
+        text-transform: capitalize
+    }
+
+    .pentagon::before {
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -85px;
+        left: -18px;
+        border-width: 0 45px 35px;
+        border-style: solid;
+        border-color: transparent transparent var(--b);
+    }
+
     .pointer {
         cursor: pointer;
     }
+
+    .image::after {
+        content: "\f03e";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 80px;
+        position: absolute;
+        opacity: 0.3;
+        z-index: 0;
+    }
+
     .text-dark {
         --bs-text-opacity: 1;
         color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
@@ -83,14 +126,16 @@ utilities;
 
     dialog {
         margin: auto;
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(0, 0, 0, 0.3);
         border: none;
         position: relative;
         z-index: 999999999 !important;
     }
-    .ul > li:not(:last-child) {
+
+    .ul>li:not(:last-child) {
         border-bottom: 1px solid #ccc;
     }
+
     a[no-deco] {
         text-decoration: none;
     }
@@ -728,6 +773,7 @@ utilities;
         opacity: 1;
         transition: all 0.3s ease-in-out;
     }
+
     .btn-none:focus {
         box-shadow: none !important;
     }
