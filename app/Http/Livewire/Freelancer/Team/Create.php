@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Freelancer\Team;
 
 use App\Models\Category;
 use App\Models\File;
+use App\Models\Portfolio;
 use App\Models\Team;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -44,7 +45,6 @@ class Create extends Component
             return $item['id'];
         }, $this->selected_categories);
 
-
         $bannerF = File::create();
         $bannerF->name = $this->bannerFile['name'];
         $bannerF->size = $this->bannerFile['size'];
@@ -71,6 +71,7 @@ class Create extends Component
     public function mount()
     {
         $this->categories = Category::all();
+        $this->portfolios = Portfolio::all();
     }
     public function addToCategories($item)
     {

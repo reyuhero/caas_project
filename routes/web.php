@@ -33,6 +33,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Livewire'], func
 
         // ! service offering
         Route::get("/serviceoffering/create", \Serviceoffering\Create::class)->name('freelancer.serviceoffering.create');
+        Route::get("/serviceoffering/{teamId}", \Serviceoffering\Index::class)->name('freelancer.serviceoffering');
         // ! talent recruitment
         Route::get("/talent-recruitment/create", \TalentRecruitment\Create::class)->name('freelancer.talentrecruitment.create');
         // ! notices

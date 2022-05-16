@@ -158,21 +158,23 @@
                 </article>
                 <!-- ! list portfolio -->
                 <article column class="gap-3 overflow-auto" style="height: calc(100vh - 30ch)">
-                    <!-- * item -->
+                    @foreach ($portfolios as $item)
+                        <!-- * item -->
                     <article class="gap-3 position-relative p-3 bg-light">
+                        {{-- logo --}}
                         <article class="bg-success text-success btn-circle p-3"
-                            style="--bs-bg-opacity: 0.3; --size: 40px;"><i class="fas fa-image fs-4 p-3"></i></article>
-
-                        <article column>
-                            <h5>Title: My Portfolio</h5>
-                            <h6 class="fs-7">description: Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.</h6>
+                            style="--bs-bg-opacity: 0.3; --size: 40px;">
+                            <i class="fas fa-image"></i>
+                        </article>
+                        <article column class="col">
+                            <h5>Title: {{ $item->title }}</h5>
+                            <h6 class="fs-7">description: {{ $item->description }}</h6>
                             <article>
-                                <i class="fas fa-user"></i>
+                                members: <i class="fas fa-user"></i>
                             </article>
                         </article>
 
-                        <article class="position-absolulte bottom-0 end-0 gap-2 mt-auto">
+                        <article class="position-absolulte bottom-0 end-0 gap-1 mt-auto flex-column">
                             <button type="button" class="btn btn-outline-primary rounded-circle"><i
                                     class="fas fa-pen"></i></button>
                             <button type="button" class="btn btn-outline-danger rounded-circle"><i
@@ -182,30 +184,7 @@
                         </article>
                     </article>
                     <!-- * end item -->
-                    <!-- * item -->
-                    <article class="gap-3 position-relative p-3 bg-light">
-                        <article class="bg-success text-success btn-circle p-3"
-                            style="--bs-bg-opacity: 0.3; --size: 40px;"><i class="fas fa-image fs-4 p-3"></i></article>
-
-                        <article column>
-                            <h5>Title: My Portfolio</h5>
-                            <h6 class="fs-7">description: Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.</h6>
-                            <article>
-                                <i class="fas fa-user"></i>
-                            </article>
-                        </article>
-
-                        <article class="position-absolulte bottom-0 end-0 gap-2 mt-auto">
-                            <button type="button" class="btn btn-outline-primary rounded-circle"><i
-                                    class="fas fa-pen"></i></button>
-                            <button type="button" class="btn btn-outline-danger rounded-circle"><i
-                                    class="fas fa-trash"></i></button>
-                            <button type="button" class="btn btn-outline-secondary rounded-circle"><i
-                                    class="fas fa-chevron-right"></i></button>
-                        </article>
-                    </article>
-                    <!-- * end item -->
+                    @endforeach
                 </article>
                 <!-- ! end list porfolio -->
                 <article class="justify-content-between align-items-end">

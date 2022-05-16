@@ -29,10 +29,13 @@ class Create extends Component
         $this->validate([
             'photos.*' => 'image|max:1024', // 1MB Max
         ]);
+        $fileName = [];
         foreach ($this->photos as $key => $photo) {
-            $this->photos[$key] = $photo->store('photos');
+            $this->photos[$key] = $photo->store('images');
+            $fileName[]['name'] = $photo->getClientOriginalName();
+            $fileName[]['extension'] = $photo->getClientOriginalExtension();
         }
-        $this->photos = json_encode($this->photos);
+        dd($fileName);
         $portfolio = Portfolio::create($this->form);
         $portfolio->links = $this->links;
         $portfolio->photos = $this->photos;
@@ -49,6 +52,14 @@ class Create extends Component
         if(!in_array($this->link, $this->links))
             array_unshift($this->links, $this->link);
         $this->link = '';
+    }
+    public function getFile()
+    {
+        dd($this->photos);
+    }
+    public function uploadImage()
+    {
+
     }
     public function render()
     {

@@ -36,7 +36,7 @@
     <x-aside-link name="Team Management" href="#" class="pointer-events-none" icon="fas fa-users">
         <a href="#">Team Profile</a>
         <a href="#">Goals</a>
-        <a href="#">Service offering</a>
+        <a href="{{ route('freelancer.serviceoffering', $teamId) }}">Service offering</a>
         <a href="#">Talent Recruitment</a>
         <a href="#">Team Reports</a>
         <a href="#">Invite Talents</a>

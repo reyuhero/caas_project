@@ -20,9 +20,9 @@ class ServiceOffering extends Model
         'members',
         'timeline',
         'pricing',
+        'team_id',
         'photos',
     ];
-
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'category_service_offering','service_offering_id','category_id');
