@@ -74,4 +74,5 @@ class Team extends Model
     {
         return $this->belongsTo(Badge::class);
     }
+
 }
