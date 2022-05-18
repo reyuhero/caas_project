@@ -1,5 +1,5 @@
 @section('title', 'project portfolio')
-<form wire:submit.prevent='submit' class="d-flex flex-column position-relative p-3 container">
+<form wire:submit.prevent='submit' enctype="multipart/form-data" class="d-flex flex-column position-relative p-3 container">
     <h4>Create A Porject to add the portfolio</h4>
     <article class="flex-column gap-3">
         <article class="flex-column">

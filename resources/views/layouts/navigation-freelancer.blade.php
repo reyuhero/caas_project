@@ -29,7 +29,7 @@
         </button>
         <div class="dropdown">
             <button
-                class="btn btn-circle btn-outline-secondary rounded-pill border-0 cubic-bezier dropdown-toggle no-content"
+                class="btn btn-circle btn-outline-secondary rounded-pill border-0 cubic-bezier    "
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-bell"></i>
             </button>
@@ -56,11 +56,11 @@
             class="1 border border-secondary px-3 rounded-pill">
         <div class="dropdown" x-data="{ open: false }">
             <button class="btn btn-outline-gray p-0 rounded-pill border-0" @click="open = !open">
-                <i class="rounded-pill fas fa-image dropdown-toggle no-content"
+                <i class="rounded-pill fas fa-image    "
                     style="width: 35px;" ></i>
             </button>
             <div id="profile-dropdown"
-                class="btn rounded-pill overflow-hidden p-0 dropdown-toggle no-content"
+                class="btn rounded-pill overflow-hidden p-0    "
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 @click="open = !open">

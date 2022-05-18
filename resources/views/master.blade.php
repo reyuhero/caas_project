@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="{{ asset('library/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/css/all.min.css') }}">
     <title>@yield('title')</title>
+    @yield('head')
     @livewireStyles
 </head>
 <body class="d-flex flex-column">
     @yield('content')
 
     @livewireScripts
+    @yield('scripts')
 </body>
 </html>

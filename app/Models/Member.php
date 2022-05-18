@@ -11,7 +11,8 @@ class Member extends Model
     protected $fillable = [
         'role_id',
         'user_id',
-        'team_id'
+        'team_id',
+        'status',
     ];
     public function role()
     {

@@ -18,9 +18,9 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
@@ -32,6 +32,7 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
     );
 
@@ -93,6 +94,7 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         ),
         'P' => 
         array (
+            'Pusher\\' => 7,
             'Psy\\' => 4,
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
@@ -324,6 +326,10 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
         ),
+        'Pusher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pusher/pusher-php-server/src',
+        ),
         'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src',
@@ -524,6 +530,7 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         'App\\Http\\Livewire\\Client\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Client/Dashboard.php',
         'App\\Http\\Livewire\\Components\\AsideLink' => __DIR__ . '/../..' . '/app/Http/Livewire/Components/AsideLink.php',
         'App\\Http\\Livewire\\Components\\Link' => __DIR__ . '/../..' . '/app/Http/Livewire/Components/Link.php',
+        'App\\Http\\Livewire\\Freelancer\\Chat\\Index' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Chat/Index.php',
         'App\\Http\\Livewire\\Freelancer\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Dashboard.php',
         'App\\Http\\Livewire\\Freelancer\\Member\\Index' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Member/Index.php',
         'App\\Http\\Livewire\\Freelancer\\Notice\\Create' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Notice/Create.php',
@@ -533,6 +540,7 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         'App\\Http\\Livewire\\Freelancer\\Project\\Create' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Project/Create.php',
         'App\\Http\\Livewire\\Freelancer\\Project\\Index' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Project/Index.php',
         'App\\Http\\Livewire\\Freelancer\\Serviceoffering\\Create' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Serviceoffering/Create.php',
+        'App\\Http\\Livewire\\Freelancer\\Serviceoffering\\Index' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Serviceoffering/Index.php',
         'App\\Http\\Livewire\\Freelancer\\TalentRecruitment\\Create' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/TalentRecruitment/Create.php',
         'App\\Http\\Livewire\\Freelancer\\Team\\Create' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Team/Create.php',
         'App\\Http\\Livewire\\Freelancer\\Team\\Index' => __DIR__ . '/../..' . '/app/Http/Livewire/Freelancer/Team/Index.php',
@@ -551,8 +559,12 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Badge' => __DIR__ . '/../..' . '/app/Models/Badge.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\Conversation' => __DIR__ . '/../..' . '/app/Models/Conversation.php',
         'App\\Models\\File' => __DIR__ . '/../..' . '/app/Models/File.php',
+        'App\\Models\\Group' => __DIR__ . '/../..' . '/app/Models/Group.php',
+        'App\\Models\\GroupUser' => __DIR__ . '/../..' . '/app/Models/GroupUser.php',
         'App\\Models\\Member' => __DIR__ . '/../..' . '/app/Models/Member.php',
+        'App\\Models\\Message' => __DIR__ . '/../..' . '/app/Models/Message.php',
         'App\\Models\\Notice' => __DIR__ . '/../..' . '/app/Models/Notice.php',
         'App\\Models\\Portfolio' => __DIR__ . '/../..' . '/app/Models/Portfolio.php',
         'App\\Models\\Profile' => __DIR__ . '/../..' . '/app/Models/Profile.php',
@@ -570,6 +582,7 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\View\\Components\\AsideLink' => __DIR__ . '/../..' . '/app/View/Components/AsideLink.php',
         'App\\View\\Components\\Link' => __DIR__ . '/../..' . '/app/View/Components/Link.php',
+        'App\\View\\Components\\Sidebar' => __DIR__ . '/../..' . '/app/View/Components/Sidebar.php',
         'App\\View\\Components\\aside' => __DIR__ . '/../..' . '/app/View/Components/aside.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
@@ -4337,6 +4350,13 @@ class ComposerStaticInit5f6b5a8a298a65d206f57496d835f5e4
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'Pusher\\ApiErrorException' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/ApiErrorException.php',
+        'Pusher\\Pusher' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Pusher.php',
+        'Pusher\\PusherCrypto' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherCrypto.php',
+        'Pusher\\PusherException' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherException.php',
+        'Pusher\\PusherInstance' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInstance.php',
+        'Pusher\\PusherInterface' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInterface.php',
+        'Pusher\\Webhook' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Webhook.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',

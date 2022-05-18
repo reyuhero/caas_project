@@ -23,7 +23,7 @@
         </article>
     </x-aside-link>
 
-    <x-aside-link name="Message & files" href="{{ route('freelancer.dashboard') }}" icon="fas fa-comments"/>
+    <x-aside-link name="Chat & files" href="{{ route('freelancer.chat', $teamId) }}" icon="fas fa-comments"/>
 
     <x-aside-link name="Schedule management" href="{{ route('freelancer.dashboard') }}" icon="fas fa-calendar-day"/>
 

@@ -35,7 +35,7 @@ class Create extends Component
             $fileName[]['name'] = $photo->getClientOriginalName();
             $fileName[]['extension'] = $photo->getClientOriginalExtension();
         }
-        dd($fileName);
+        // dd($fileName);
         $portfolio = Portfolio::create($this->form);
         $portfolio->links = $this->links;
         $portfolio->photos = $this->photos;

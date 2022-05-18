@@ -5,74 +5,86 @@ namespace App\Http\Livewire\Freelancer\Team;
 use App\Models\Category;
 use App\Models\File;
 use App\Models\Portfolio;
+use App\Models\ServiceOffering;
 use App\Models\Team;
+use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Create extends Component
 {
     use WithFileUploads;
-    public $form = [
-        'name' => '',
-        'url' => '',
-        'tagline' => '',
-        'description' => '',
-        'service_offering' => ''
+    protected $rules = [
+        'name' => 'required|string',
+        'url' => 'required|string',
+        'tagline' => 'required|string',
+        'description' => 'nullable',
+        'logo' => 'image|max:1024',
+        'banner' => 'image|max:2048',
     ];
-    public $logo = null;
-    public $file, $bannerFile;
-    public $banner = null;
-    public $categories = [];
+    public $name, $url, $tagline, $description, $logo, $banner, $categories;
+    public $users, $serviceOfferings, $portfolios;
     public $selected_categories = [];
-    public $selected_user = [];
-    public $users = [];
-    public $portfolios = [];
-
+    public $selected_users = [];
+    public function mount()
+    {
+        $this->categories = Category::all();
+        $this->portfolios = Portfolio::all();
+        $this->users = User::all();
+        $this->serviceOfferings = ServiceOffering::all();
+    }
+    public function save()
+    {
+        dd($this->logo->getClientOriginalExtension());
+    }
     public function submit()
     {
-        $this->validate([
-            'logo.*' => 'image|mimes:png,jpeg,jpg:max:1024', // 1MB Max
-            'banner.*' => 'image|mimes:png,jpeg'
-        ]);
-        foreach ($this->logo as $key => $logo) {
-            $this->logo[$key] = $logo->store('images');
-        }
-        foreach ($this->banner as $key => $banner) {
-            $this->banner[$key] = $banner->store('images');
-        }
+        $this->validate();
+        $logoFile = [];
+        $logoFile['size'] = $this->logo->getSize();
+        $logoFile['name'] = $this->logo->getClientOriginalName();
+        $logoFile['mime'] = $this->logo->getClientOriginalExtension();
+        $logoFile['location'] = $this->logo->store('images');
+        $bannerFile = [];
+        $bannerFile['size'] = $this->banner->getSize();
+        $bannerFile['name'] = $this->banner->getClientOriginalName();
+        $bannerFile['mime'] = $this->banner->getClientOriginalExtension();
+        $bannerFile['location'] = $this->banner->store('images');
+
         $userID = auth()->user()->id;
         $categories_ids = array_map( function($item) {
             return $item['id'];
         }, $this->selected_categories);
 
-        $bannerF = File::create();
-        $bannerF->name = $this->bannerFile['name'];
-        $bannerF->size = $this->bannerFile['size'];
-        $bannerF->mime = $this->bannerFile['ext'];
-        $bannerF->location = reset($this->banner);
-        $bannerF->save();
+        $logo = File::create();
+        $logo->name = $logoFile['name'];
+        $logo->size = $logoFile['size'];
+        $logo->mime = $logoFile['mime'];
+        $logo->location = $logoFile['location'];
+        $logo->save();
 
-        $file = File::create();
-        $file->name = $this->file['name'];
-        $file->size = $this->file['size'];
-        $file->mime = $this->file['ext'];
-        $file->location = reset($this->logo);
-        $file->save();
-
-        $team = Team::create($this->form);
+        $banner = File::create();
+        $banner->name = $bannerFile['name'];
+        $banner->size = $bannerFile['size'];
+        $banner->mime = $bannerFile['mime'];
+        $banner->location = $bannerFile['location'];
+        $banner->save();
+        // selected users save in member
+        $team = Team::create();
+        $team->name = $this->name;
+        $team->url = $this->url;
+        $team->description = $this->description;
+        $team->tagline = $this->tagline;
         $team->categories()->attach($categories_ids);
-        $team->logo_id = $file->id;
-        $team->banner_id = $bannerF->id;
+        $team->logo_id = $logo->id;
+        $team->banner_id = $banner->id;
         $team->ownership_id = $userID;
         $team->save();
 
         return redirect()->route('freelancer.teams');
     }
-    public function mount()
-    {
-        $this->categories = Category::all();
-        $this->portfolios = Portfolio::all();
-    }
+
     public function addToCategories($item)
     {
         if(!in_array($item, $this->selected_categories))
@@ -81,20 +93,6 @@ class Create extends Component
     public function removeCategory($key)
     {
         unset($this->selected_categories[$key]);
-    }
-
-    public function getFile($file)
-    {
-        $this->file['name'] = $file['name'];
-        $this->file['size'] = $file['size'];
-        $this->file['ext'] = $file['ext'];
-    }
-
-    public function getBanner($file)
-    {
-        $this->bannerFile['name'] = $file['name'];
-        $this->bannerFile['size'] = $file['size'];
-        $this->bannerFile['ext'] = $file['ext'];
     }
     public function render()
     {

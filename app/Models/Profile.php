@@ -28,4 +28,8 @@ class Profile extends Model
     {
         return $this->hasMany(Team::class);
     }
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
 }
