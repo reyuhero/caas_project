@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::view('/', 'home')->name('home');
+Route::get('/login',App\Http\Livewire\Login::class)->name('login');
+Route::get('/register',App\Http\Livewire\Register::class)->name('register');
+Route::get('/logout',App\Http\Livewire\Logout::class)->name('logout');
 Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Livewire'], function(){
     Route::group([
         'middleware'=> ['auth','user-access:freelancer'],
@@ -47,38 +49,55 @@ Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Livewire'], func
         Route::get("/client/dashboard", Dashboard::class)->name('client.dashboard');
     });
 });
-Route::get('/login',App\Http\Livewire\Login::class)->name('login');
-Route::get('/register',App\Http\Livewire\Register::class)->name('register');
-Route::get('/logout',App\Http\Livewire\Logout::class)->name('logout');
 
-//Delete Message
-Route::get('/deleteMessage/{id}','ChatController@deleteMessage');
+Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Controllers'], function(){
 
-// Delete Conversation
-Route::get('/deleteConversation/{id}', 'ChatController@deleteConversation')->name('conversation.delete');
+    //Update avatar
+    Route::post('/updateavatar', 'UserController@update')->name('updateavatar');
+me
+    //Update Name
+    Route::post('/nameupdate', 'UserController@nameupdate')->name('nameupdate');
 
-//Group Create
-Route::post('/groups', 'GroupController@store')->name('groups');
+    //Delete Contact
+    Route::delete('/delete/{id}', 'UserController@destroy')->name('contact.destroy');
 
-//Group Search
-Route::get('/groupsearch','GroupController@groupsearch');
+    //Search Contact
+    Route::get('/search','UserController@search')->name('user.search');
 
-//Group Massage
-Route::get('/groupmessage/{id}', 'GroupController@getGroupMessage')->name('groupmessage');
-Route::post('groupmessage', 'GroupController@sendGroupMessage');
-Route::get('/grouplastmessage/{id}', 'GroupController@getGroupLastMessage');
+    //Search Recent Contact
+    Route::get('/recentsearch','UserController@recentsearch')->name('user.search.recent');
 
-// Delete Group Message
-Route::get('/deletegroupmessage/{id}','GroupController@deletegroupmessage');
+    //chat Message Search
+    Route::get('/messagesearch','UserController@messagesearch')->name('user.search.message');
+    //Delete Message
+    Route::get('/deleteMessage/{id}', "ChatController@deleteMessage")->name('message.delete');
 
-// Delete Group Conversation
-Route::get('/deleteGroupConversation/{id}', 'GroupController@deleteGroupConversation')->name('groupconversation.delete');
+    // Delete Conversation
+    Route::get('/deleteConversation/{id}', "ChatController@deleteConversation")->name('conversation.delete');
 
-//Group Message Search
-Route::get('/groupmessagesearch','GroupController@groupmessagesearch');
+    //Group Create
+    Route::post('/groups', "GroupController@store")->name('groups');
 
-//Massage
-Route::get('/message/{id}', 'ChatController@getMessage')->name('message');
-Route::post('message', 'ChatController@sendMessage');
-Route::post('typing', 'ChatController@sendTyping');
-Route::get('/lastmessage/{id}', 'ChatController@getLastMessage');
+    //Group Search
+    Route::get('/groupsearch',"GroupController@groupsearch")->name('group.search');
+
+    //Group Massage
+    Route::get('/groupmessage/{id}', "GroupController@getGroupMessage")->name('group.message');
+    Route::post('groupmessage', "GroupController@sendGroupMessage")->name('group.message.send');
+    Route::get('/grouplastmessage/{id}', "GroupController@getGroupLastMessage")->name('group.message.last');
+
+    // Delete Group Message
+    Route::get('/deletegroupmessage/{id}',"GroupController@deletegroupmessage")->name('group.message.delete');
+
+    // Delete Group Conversation
+    Route::get('/deleteGroupConversation/{id}', "GroupController@deleteGroupConversation")->name('groupconversation.delete');
+
+    //Group Message Search
+    Route::get('/groupmessagesearch',"GroupController@groupmessagesearch")->name('group.search.message');
+
+    //Massage
+    Route::get('/message/{id}', "ChatController@getMessage")->name('message');
+    Route::post('/message', "ChatController@sendMessage")->name('message.send');
+    Route::post('/typing', "ChatController@sendTyping")->name('message.typing');
+    Route::get('/lastmessage/{id}', "ChatController@getLastMessage")->name('message.last');
+});

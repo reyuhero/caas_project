@@ -1,4 +1,4 @@
-<aside class="col-3 d-flex flex-column gap-2 py-3 ps-3">
+<aside class="col-3 d-flex flex-column gap-2 py-3 p-3">
 
     <x-aside-link name="{{ $team->name }}" href="#" icon="fab fa-adn" class="pointer-events-none">
         <a href="#">Created By You:</a>

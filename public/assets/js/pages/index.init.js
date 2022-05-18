@@ -105,6 +105,7 @@ var receiver_userid = "";
 
 (function ($) {
   'use strict';
+  var base = window.location.origin;
 
   $('.popup-img').magnificPopup({
     type: 'image',
@@ -228,7 +229,7 @@ var receiver_userid = "";
     $("#btnName").css("display", "none");
     $("#btnSave").css("display", "block");
   });
-  
+
   $(document).on("click", "#btnSave", function () {
     $("#btnName").css("display", "block");
     $("#btnSave").css("display", "none");
@@ -285,7 +286,7 @@ var receiver_userid = "";
     var $value = $(this).val();
     $.ajax({
       type: "get",
-      url: "search",
+      url: config.routes.search_user,
       data: {
         search: $value
       },
@@ -304,7 +305,7 @@ var receiver_userid = "";
     var $value = $(this).val();
     $.ajax({
       type: "get",
-      url: "recentsearch",
+      url: config.routes.user_search_recent,
       data: {
         search: $value
       },
@@ -324,7 +325,7 @@ var receiver_userid = "";
     var $value = $(this).val();
     $.ajax({
       type: "get",
-      url: "messagesearch",
+      url: config.routes.user_search_message,
       data: {
         search: $value,
         userid: $userid
@@ -372,7 +373,7 @@ var receiver_userid = "";
     var $value = $(this).val();
     $.ajax({
       type: "get",
-      url: "groupsearch",
+      url: config.routes.group_search,
       data: {
         search: $value
       },
@@ -392,7 +393,7 @@ var receiver_userid = "";
     var $value = $(this).val();
     $.ajax({
       type: "get",
-      url: "groupmessagesearch",
+      url: config.routes.group_search_message,
       data: {
         search: $value,
         groupid: $groupid
@@ -437,7 +438,7 @@ var receiver_userid = "";
     fd.append("message", abcfiles.name);
     $.ajax({
       type: "post",
-      url: "message",
+      url: config.routes.message_send,
       // need to create this post route
       data: fd,
       cache: false,
@@ -491,7 +492,7 @@ var receiver_userid = "";
       var datastr = "receiver_id=" + receiver_id + "&message=" + message;
       $.ajax({
         type: "post",
-        url: "message",
+        url: config.routes.message_send,
         // need to create this post route
         data: datastr,
         cache: false,
@@ -514,7 +515,7 @@ var receiver_userid = "";
     var datastr = "receiver_id=" + receiver_id;
     $.ajax({
       type: "post",
-      url: "typing",
+      url: config.routes.message_typing,
       // need to create this post route
       data: datastr,
       cache: false,
@@ -586,7 +587,7 @@ var receiver_userid = "";
     $("#group-messages").show();
     $.ajax({
       type: "get",
-      url: "groupmessage/" + id,
+      url: config.routes.group_message + id,
       // need to create this route
       data: "",
       cache: false,
@@ -616,7 +617,7 @@ var receiver_userid = "";
       var datastr = "group_id=" + group_id + "&message=" + message;
       $.ajax({
         type: "post",
-        url: "groupmessage",
+        url: config.routes.group_message_send,
         // need to create this post route
         data: datastr,
         cache: false,
@@ -659,7 +660,7 @@ var receiver_userid = "";
     fd.append("message", files.name);
     $.ajax({
       type: "post",
-      url: "groupmessage",
+      url: config.routes.group_message_send,
       // need to create this post route
       data: fd,
       cache: false,
@@ -683,9 +684,10 @@ var receiver_userid = "";
   $(document).on("click", ".deletegroupmessage", function () {
     var group_id = $(this).attr('group-id');
     document.getElementById("msg-" + group_id).remove();
+
     $.ajax({
       type: "get",
-      url: "deletegroupmessage/" + group_id,
+      url: config.routes.group_message_delete + group_id,
       success: function success(data) {}
     });
   });
@@ -700,7 +702,7 @@ var receiver_userid = "";
     document.getElementById("msg-" + id).remove();
     $.ajax({
       type: "get",
-      url: "deleteMessage/" + id,
+      url: config.routes.message_delete + id,
       success: function success(data) {}
     });
   });
@@ -729,9 +731,11 @@ var receiver_userid = "";
     $(".user-profile-sidebar.group-profile-sidebar").hide();
     $("#messages").show();
     $("#group-messages").hide();
+    console.log('base', base)
+
     $.ajax({
       type: "get",
-      url: "message/" + receiver_id,
+      url: base + "/message/" + receiver_id,
       // need to create this route
       data: "",
       cache: false,
@@ -785,7 +789,7 @@ var receiver_userid = "";
   function getlastmessage(data) {
     $.ajax({
       type: "get",
-      url: "lastmessage/" + data,
+      url: config.routes.message_last + data,
       // need to create this route
       data: "",
       cache: false,
@@ -805,7 +809,7 @@ var receiver_userid = "";
   function getgrouplastmessage(data) {
     $.ajax({
       type: "get",
-      url: "grouplastmessage/" + data,
+      url:config.routes.group_message_last + data,
       // need to create this route
       data: "",
       cache: false,
@@ -826,7 +830,7 @@ var receiver_userid = "";
     var id = $(this).attr('user-id');
     $.ajax({
       type: "get",
-      url: "deleteConversation/" + id,
+      url: config.routes.conversation_delete + id,
       success: function success(data) {
         $(".chat-conversation #chatul").html("");
       },
@@ -845,7 +849,7 @@ var receiver_userid = "";
     var group_id = $(this).attr('group-id');
     $.ajax({
       type: "get",
-      url: "deleteGroupConversation/" + group_id,
+      url: config.routes.conversation_delete + group_id,
       success: function success(data) {
         $(".chat-conversation #chatgroup-ul").html("");
       },

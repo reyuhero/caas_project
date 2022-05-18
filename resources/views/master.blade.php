@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('library/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/css/all.min.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>@yield('title')</title>
     @yield('head')
     @livewireStyles

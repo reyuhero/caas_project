@@ -9,7 +9,7 @@
                             {{ $contact->name }}</h5>
                     </div>
                     <div class="dropdown">
-                        <a href="#" class="text-muted   text-decoration-none  " data-toggle="dropdown" aria-haspopup="true"
+                        <a href="#" class="text-muted text-decoration-none" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <i class="ri-more-2-fill"></i>
                         </a>
