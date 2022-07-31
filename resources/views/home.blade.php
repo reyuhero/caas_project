@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Home')
 @section('content')
-    home page
+<div class="flex">
+    <x-forms.input label='Name:' id="name" />
+</div>
 @endsection

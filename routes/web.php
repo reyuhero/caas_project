@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\TestController;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,28 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home')->name('home');
 Route::get('/login',App\Http\Livewire\Login::class)->name('login');
 Route::get('/register',App\Http\Livewire\Register::class)->name('register');
+Route::controller(TestController::class)->group(function(){
+    Route::get('/test', 'index');
+});
+// route model binding
+Route::get('/users/{user}', function(User $user){
+    echo $user->email;
+});
+// soft delete
+Route::get('/user/{user}', function(User $user){
+    return $user->email;
+})->withTrashed();
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('/user/{id}', function($id){
+        echo "user id: $id";
+    })->name('user');
+});
+Route::get('/locations/{location:slug}', [TestController::class, 'index'])
+    ->name('locations.view')
+    ->missing(function(Request $request) {
+        return redirect('locations.index');
+    });
+
 Route::get('/logout',App\Http\Livewire\Logout::class)->name('logout');
 Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Livewire'], function(){
     Route::group([
@@ -54,7 +78,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Controllers'], f
 
     //Update avatar
     Route::post('/updateavatar', 'UserController@update')->name('updateavatar');
-me
     //Update Name
     Route::post('/nameupdate', 'UserController@nameupdate')->name('nameupdate');
 
